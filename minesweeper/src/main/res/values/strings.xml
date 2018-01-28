@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GameLab</string>
+    <string name="title_home">Menu</string>
+    <string name="title_dashboard">Scoreboard</string>
+    <string name="title_notifications">About</string>
+    <string name="win_message">Good job! You won this game!</string>
+    <string name="loss_message">Oops! You lost this game. Try again!</string>
+    <string name="title_activity_minesweeper">Minesweeper</string>
+    <string name="level_easy">Easy</string>
+    <string name="level_medium">Medium</string>
+    <string name="level_hard">Hard</string>
+    <string name="level_picker">Pick your preferred level for this game:</string>
+    <string name="new_game">Start The Game</string>
+    <string name="title_activity_minesweeper_game">Minesweeper_game</string>
+
+</resources>
