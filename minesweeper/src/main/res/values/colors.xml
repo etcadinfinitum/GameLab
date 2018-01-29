@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="ms1">#0000ff</color>
+    <color name="ms2">#008000</color>
+    <color name="ms3">#df0000</color>
+    <color name="ms4">#0a0260</color>
+    <color name="ms5">#692203</color>
+    <color name="ms6">#00abff</color>
+    <color name="ms7">#000000</color>
+    <color name="ms8">#4f4f4f</color>
+    <color name="selected">#A2A2A2</color>
+
 </resources>
