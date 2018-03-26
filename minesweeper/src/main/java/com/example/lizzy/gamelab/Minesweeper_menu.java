@@ -8,10 +8,12 @@ import android.widget.Button;
 import android.content.Intent;
 
 /**
- * Minesweeper game menu view.
+ * Minesweeper_menu game menu view.
  */
-public class Minesweeper extends AppCompatActivity {
+public class Minesweeper_menu extends AppCompatActivity {
     protected String level = "";
+    private float dpScale;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class Minesweeper extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //
+        dpScale = getResources().getDisplayMetrics().density;
 
         // level selection
         final Button easy = (Button) findViewById(R.id.level_easy);
@@ -31,8 +33,11 @@ public class Minesweeper extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 easy.setSelected(true);
+                easy.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
                 medium.setSelected(false);
+                medium.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 hard.setSelected(false);
+                hard.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 level = "Easy";
             }
         });
@@ -40,8 +45,11 @@ public class Minesweeper extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 easy.setSelected(false);
+                easy.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 medium.setSelected(true);
+                medium.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
                 hard.setSelected(false);
+                hard.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 level = "Medium";
             }
         });
@@ -49,8 +57,11 @@ public class Minesweeper extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 easy.setSelected(false);
+                easy.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 medium.setSelected(false);
+                medium.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
                 hard.setSelected(true);
+                hard.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
                 level = "Hard";
             }
         });

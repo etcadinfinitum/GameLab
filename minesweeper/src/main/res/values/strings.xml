@@ -12,5 +12,11 @@
     <string name="level_picker">Pick your preferred level for this game:</string>
     <string name="new_game">Start The Game</string>
     <string name="title_activity_minesweeper_game">Minesweeper_game</string>
+    <string name="about_text">Thanks for stopping by! This application was created by Infinitum Industries. Copyright 2018.</string>
+    <string name="title_activity_about_page">AboutPage</string>
+    <string name="title_activity_main">Scoreboard</string>
+    <string name="title_activity_scoreboard">Scoreboard</string>
+    <string name="title_activity_tic_tac_toe_menu">TicTacToe_menu</string>
+    <string name="title_activity_tic_tac_toe_model">TicTacToe_model</string>
 
 </resources>

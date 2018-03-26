@@ -1,7 +1,7 @@
 package com.example.lizzy.gamelab;
 
 /**
- * A simple class which describes the traits of a tile in a Minesweeper game.
+ * A simple class which describes the traits of a tile in a Minesweeper_menu game.
  * This class type is only for modeling the game; there is no UI specs in this
  * class. All methods and variables are accessed by @MinewsweeperModel.java.
  * @author Lizzy Presland
@@ -12,6 +12,7 @@ public class GameSquare {
     private boolean isMine;
     private int mineHint;
     private boolean isSelected;
+    private boolean isNewClick;
 
     /**
      * Constructor for a tile object. Initializes the square to be a blank tile,
@@ -19,6 +20,7 @@ public class GameSquare {
      */
     public GameSquare() {
         isSelected = false;
+        isNewClick = true;
         mineHint = 0;
     }
 
@@ -76,4 +78,18 @@ public class GameSquare {
         return isSelected;
     }
 
+    /**
+     * A method which indicates the cell's age of click status. Used to 
+     * @return True if the cell status was just clicked, false if previously clicked
+     */
+    public boolean getNewClick() { 
+        return isNewClick;
+    }
+
+    /**
+     * 
+     */
+    public void setOldClick() {
+        isNewClick = false;
+    }
 }

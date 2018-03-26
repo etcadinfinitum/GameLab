@@ -20,13 +20,16 @@ public class Menu extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    Intent menu = new Intent(getApplicationContext(), Menu.class);
+                    startActivity(menu);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    Intent scoreboard = new Intent(getApplicationContext(), Scoreboard.class);
+                    startActivity(scoreboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    Intent about = new Intent (getApplicationContext(), AboutPage.class);
+                    startActivity(about);
                     return true;
             }
             return false;
@@ -49,11 +52,24 @@ public class Menu extends AppCompatActivity {
                 goToMinesweeperMenu();
             }
         });
+
+        Button tictactoe = (Button) findViewById(R.id.ttt);
+        tictactoe.setText("Tic-Tac-Toe");
+        tictactoe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToTicTacToe();
+            }
+        });
     }
 
     private void goToMinesweeperMenu() {
-        Intent intent = new Intent(this, Minesweeper.class);
+        Intent intent = new Intent(this, Minesweeper_menu.class);
         startActivity(intent);
     }
 
+    private void goToTicTacToe() {
+        Intent intent = new Intent(this, TicTacToe_game.class);
+        startActivity(intent);
+    }
 }

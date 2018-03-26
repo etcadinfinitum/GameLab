@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#c1a341</color>
     <color name="ms1">#0000ff</color>
     <color name="ms2">#008000</color>
     <color name="ms3">#df0000</color>
@@ -12,5 +12,7 @@
     <color name="ms7">#000000</color>
     <color name="ms8">#4f4f4f</color>
     <color name="selected">#A2A2A2</color>
+    <color name="newcell">#CACACA</color>
+    <color name="winmove">#90DE5E</color>
 
 </resources>

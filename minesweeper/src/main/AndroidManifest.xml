@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.lizzy.gamelab.Menu"
+            android:name=".Menu"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,23 +19,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.lizzy.gamelab.Minesweeper"
+            android:name=".Minesweeper_menu"
             android:label="@string/title_activity_minesweeper"
-            android:parentActivityName="com.example.lizzy.gamelab.Menu"
+            android:parentActivityName=".Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.lizzy.gamelab.Menu" />
         </activity>
         <activity
-            android:name="com.example.lizzy.gamelab.Minesweeper_game"
+            android:name=".Minesweeper_game"
             android:label="@string/title_activity_minesweeper_game"
-            android:parentActivityName="com.example.lizzy.gamelab.Minesweeper"
+            android:parentActivityName=".Minesweeper_menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Minesweeper" />
+                android:value="com.example.lizzy.gamelab.Minesweeper_menu" />
         </activity>
+        <activity
+            android:name=".AboutPage"
+            android:label="@string/title_activity_about_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Scoreboard"
+            android:label="@string/title_activity_scoreboard"
+            android:parentActivityName=".Menu"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.lizzy.gamelab.Menu" />
+        </activity>
+        <activity
+            android:name=".TicTacToe_game"
+            android:label="@string/title_activity_tic_tac_toe_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TicTacToe_model"
+            android:label="@string/title_activity_tic_tac_toe_model"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

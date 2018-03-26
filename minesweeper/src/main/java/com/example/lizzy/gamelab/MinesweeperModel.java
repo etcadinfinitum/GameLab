@@ -4,14 +4,14 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * A class which dictates the functionality of the Minesweeper game engine.
+ * A class which dictates the functionality of the Minesweeper_menu game engine.
  */
 public class MinesweeperModel extends Observable {
 
 
     private GameSquare[][] squareTraits;
 
-    //
+    // private variables
     private boolean activeGame;
     private boolean didUserWinGame;
 
@@ -26,7 +26,7 @@ public class MinesweeperModel extends Observable {
         super();
         addObserver(controls);
         activeGame = true;
-        squareTraits = new GameSquare[boardWidth][boardHeight];
+        squareTraits = new GameSquare[boardHeight][boardWidth];
         for (int row = 0; row < squareTraits.length; row++) {
             for (int col = 0; col < squareTraits[row].length; col++) {
                 squareTraits[row][col] = new GameSquare();
@@ -138,7 +138,7 @@ public class MinesweeperModel extends Observable {
     }
 
     /**
-     *
+     * Recursion helper method for uncovering clicked cells
      * @param currX
      * @param currY
      */
