@@ -31,9 +31,11 @@ public class Scorekeeper {
     public boolean checkNewTopScore(GameName game, int score) {
         boolean isTopScore = false;
         ArrayList<Score> gameType = getGameType(game);
-        for (Score thisScore : gameType) {
-            if (score >= thisScore.getScore()) {
-                isTopScore = true;
+        if (gameType != null) {
+            for (Score thisScore : gameType) {
+                if (score >= thisScore.getScore()) {
+                    isTopScore = true;
+                }
             }
         }
         return isTopScore;
@@ -52,6 +54,7 @@ public class Scorekeeper {
                 break;
             case TICTACTOE:
                 gameType = tttLocal;
+                break;
             default:
 
                 gameType = null;
@@ -61,7 +64,7 @@ public class Scorekeeper {
     }
 
     /**
-     *
+     * Adds score to
      * @param game
      * @param newScore
      * @return

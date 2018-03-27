@@ -58,6 +58,7 @@ public class MinesweeperModel extends Observable {
                 mineQty /= 6;
                 break;
         }
+        System.out.println("Creating board with # of mines: " + mineQty + ". Level is " + diff);
 
         //
         for (int i = 1; i <= mineQty; i++) {

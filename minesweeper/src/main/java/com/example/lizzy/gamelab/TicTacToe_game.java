@@ -207,9 +207,11 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         removeAllEnabledButtons();
         Point[] winningMoves = model.getWinningSquares();
         for (int i = 0; i < winningMoves.length; i++) {
-            int winButtonID = getResources().getIdentifier("b" + Integer.toString(winningMoves[i].x) + Integer.toString(winningMoves[i].y), "id", getPackageName());
-            Button winButton = (Button) findViewById(winButtonID);
-            winButton.setBackgroundColor(getResources().getColor(R.color.winmove, null));
+            if (winningMoves[i] != null) {
+                int winButtonID = getResources().getIdentifier("b" + Integer.toString(winningMoves[i].x) + Integer.toString(winningMoves[i].y), "id", getPackageName());
+                Button winButton = (Button) findViewById(winButtonID);
+                winButton.setBackgroundColor(getResources().getColor(R.color.winmove, null));
+            }
         }
 
         // win/loss dialogs

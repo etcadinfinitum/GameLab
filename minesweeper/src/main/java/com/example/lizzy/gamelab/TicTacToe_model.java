@@ -70,7 +70,7 @@ public class TicTacToe_model extends Observable {
                 winningSquares[0] = new Point(row, 0);
                 winningSquares[1] = new Point(row, 1);
                 winningSquares[2] = new Point(row, 2);
-                if (board[row][0].equals("X")) {
+                if (board[row][0].whichTeam().equals("X")) {
                     Xwon = true;
                 }
             }
@@ -84,7 +84,7 @@ public class TicTacToe_model extends Observable {
                 winningSquares[0] = new Point(0, col);
                 winningSquares[1] = new Point(1, col);
                 winningSquares[2] = new Point(2, col);
-                if (board[0][col].equals("X")) {
+                if (board[0][col].whichTeam().equals("X")) {
                     Xwon = true;
                 }
             }
@@ -97,7 +97,7 @@ public class TicTacToe_model extends Observable {
             winningSquares[0] = new Point(0, 0);
             winningSquares[1] = new Point(1, 1);
             winningSquares[2] = new Point(2, 2);
-            if (board[0][0].equals("X")) {
+            if (board[0][0].whichTeam().equals("X")) {
                 Xwon = true;
             }
         }
@@ -107,7 +107,7 @@ public class TicTacToe_model extends Observable {
             winningSquares[0] = new Point(0, 2);
             winningSquares[1] = new Point(1, 1);
             winningSquares[2] = new Point(2, 0);
-            if (board[0][2].equals("X")) {
+            if (board[0][2].whichTeam().equals("X")) {
                 Xwon = true;
             }
         }

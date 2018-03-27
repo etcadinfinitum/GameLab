@@ -21,14 +21,17 @@ public class Menu extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     Intent menu = new Intent(getApplicationContext(), Menu.class);
+                    menu.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(menu);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent scoreboard = new Intent(getApplicationContext(), Scoreboard.class);
+                    scoreboard.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(scoreboard);
                     return true;
                 case R.id.navigation_notifications:
                     Intent about = new Intent (getApplicationContext(), AboutPage.class);
+                    about.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(about);
                     return true;
             }
@@ -65,11 +68,13 @@ public class Menu extends AppCompatActivity {
 
     private void goToMinesweeperMenu() {
         Intent intent = new Intent(this, Minesweeper_menu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     private void goToTicTacToe() {
         Intent intent = new Intent(this, TicTacToe_game.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }

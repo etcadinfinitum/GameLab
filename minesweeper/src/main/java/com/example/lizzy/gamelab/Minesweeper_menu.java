@@ -87,7 +87,9 @@ public class Minesweeper_menu extends AppCompatActivity {
 
     protected void startNewGame(String difficulty) {
         Intent intent = new Intent(this, Minesweeper_game.class);
+        intent.removeExtra("Level");
         intent.putExtra("Level", difficulty);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

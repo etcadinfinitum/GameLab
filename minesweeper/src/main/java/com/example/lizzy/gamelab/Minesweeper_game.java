@@ -45,10 +45,16 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         switch (level) {
             case "Easy":
                 gameLevel = GameDifficulty.EASY;
+                break;
             case "Medium":
                 gameLevel = GameDifficulty.MEDIUM;
+                break;
             case "Hard":
                 gameLevel = GameDifficulty.HARD;
+                break;
+            default:
+                gameLevel = GameDifficulty.DUMMY;
+                break;
         }
         gameLevelString = level;
 
@@ -283,52 +289,39 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
         // add popup indicating win/loss
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
+                menuIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(menuIntent);
+            }
+        });
 
+        dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
+                newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                while (newGameIntent.getExtras() != null) {
+                    System.out.println("Extras are currently " + newGameIntent.getExtras() + "; removing...");
+                    newGameIntent.removeExtra("Level");
+                    System.out.println("Extras are currently " + newGameIntent.getExtras() + "; removing...");
+                }
+                newGameIntent.putExtra("Level", gameLevelString);
+                startActivity(newGameIntent);
+            }
+        });
         if (!gameState.getGameStatus() && gameState.didUserWin()) {
             dialog.setCancelable(true);
             dialog.setTitle("You won!");
             dialog.setMessage(R.string.win_message);
-            dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
-                    startActivity(menuIntent);
-                }
-            });
-
-            dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
-                    newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    newGameIntent.putExtra("Level", gameLevelString);
-                    startActivity(newGameIntent);
-                }
-            });
             dialog.show();
 
         } else if (!gameState.getGameStatus()) {
             dialog.setCancelable(true);
             dialog.setTitle("You lost!");
             dialog.setMessage(R.string.loss_message);
-            dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
-                    menuIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(menuIntent);
-                }
-            });
-
-            dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
-                    newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    newGameIntent.putExtra("Level", gameLevelString);
-                    startActivity(newGameIntent);
-                }
-            });
             dialog.show();
         }
 
