@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent2"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lizzy.gamelab.TicTacToe_game"
+    tools:showIn="@layout/activity_tic_tac_toe_game">
+
+    <LinearLayout
+        android:id="@+id/tictactoe_grid"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:divider="@drawable/spacer_medium"
+        android:padding="@dimen/spacing_medium"
+        android:background="@color/ms7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:divider="@drawable/spacer_medium"
+            android:padding="@dimen/spacing_medium"
+            android:showDividers="middle"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/b00"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent" />
+            <Button
+                android:id="@+id/b01"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+            <Button
+                android:id="@+id/b02"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:divider="@drawable/spacer_medium"
+            android:padding="@dimen/spacing_medium"
+            android:showDividers="middle"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/b10"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent" />
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:divider="@drawable/spacer_medium"
+            android:padding="@dimen/spacing_medium"
+            android:showDividers="middle"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/b20"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent" />
+            <Button
+                android:id="@+id/b21"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+            <Button
+                android:id="@+id/b22"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

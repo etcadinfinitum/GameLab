@@ -13,10 +13,14 @@
     <string name="new_game">Start The Game</string>
     <string name="title_activity_minesweeper_game">Minesweeper_game</string>
     <string name="about_text">Thanks for stopping by! This application was created by Infinitum Industries. Copyright 2018.</string>
-    <string name="title_activity_about_page">AboutPage</string>
+    <string name="title_activity_about_page">About Page</string>
     <string name="title_activity_main">Scoreboard</string>
     <string name="title_activity_scoreboard">Scoreboard</string>
     <string name="title_activity_tic_tac_toe_menu">TicTacToe_menu</string>
     <string name="title_activity_tic_tac_toe_model">TicTacToe_model</string>
+    <string name="start_game">When you\'re ready, press "Start Game" to begin.</string>
+    <string name="stalemate_message">Lol. Nobody won!</string>
+    <string name="ttt_x_won">X won the game! Good job X\'ers!</string>
+    <string name="ttt_o_won">O won the game! Good job O\'ers!</string>
 
 </resources>

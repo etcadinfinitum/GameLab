@@ -1,8 +1,11 @@
 package com.example.lizzy.gamelab;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import java.util.Observer;
 import java.util.Observable;
@@ -18,6 +21,7 @@ import android.widget.GridLayout;
 public class Minesweeper_game extends AppCompatActivity implements Observer {
 
     protected GameDifficulty gameLevel = GameDifficulty.DUMMY;
+    private String gameLevelString = "";
     public Button[][] theButtons;
     private int boardHeight = 0;
     private int boardWidth = 0;
@@ -30,7 +34,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
     /**
      * The initializer for the minesweeper board.
-     * @param savedInstanceState
+     * @param savedInstanceState The activity-trigger instance
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
             case "Hard":
                 gameLevel = GameDifficulty.HARD;
         }
+        gameLevelString = level;
 
         metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -61,7 +66,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
         screenWidth = (screenWidth - (int) (2 * getResources().getDimension(R.dimen.activity_horizontal_margin)));
         screenHeight = (screenHeight - (int) (2 * getResources().getDimension(R.dimen.activity_horizontal_margin))
-                - getActionBarHeight() - getStatusBarHeight());
+                - getActionBarHeight() - getStatusBarHeight() - getNavigationBarHeight());
 
         int buttonSize = (int) Math.floor(0.25 * metrics.xdpi);
 
@@ -78,7 +83,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         System.out.println("Creating button board with x, y dims: " + boardWidth + ", " + boardHeight + "; buttons have dims x, y:  " + buttonSizeX + ", " + buttonSizeY);
 
         // create a grid layout with proper xml dimensions determined by input/preset values
-        GridLayout layout = (GridLayout) findViewById(R.id.button_grid);
+        GridLayout layout = (GridLayout) findViewById(R.id.minesweeper_button_grid);
         layout.setRowCount(theButtons.length);
         layout.setColumnCount(theButtons[0].length);
 
@@ -86,7 +91,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         for (int row = 0; row < theButtons.length; row++) {
             for (int col = 0; col < theButtons[row].length; col++) {
                 theButtons[row][col] = new Button(this);
-                theButtons[row][col].setId(100 + (10 * row) + col);
+                theButtons[row][col].setId((1000 * row) + col);
                 theButtons[row][col].setOnClickListener(move);
                 theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.newcell, null));
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec(row, 1), GridLayout.spec(col, 1));
@@ -98,6 +103,10 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
     }
 
+    /**
+     * A helper method to get the height of the system status bar.
+     * @return The height of the status bar in pixels
+     */
     private int getStatusBarHeight() {
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -107,14 +116,40 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         return result;
     }
 
+    /**
+     * A helper method to get the height of the application's action bar.
+     * @return The height of the action bar in pixels
+     */
     private int getActionBarHeight() {
         int value = 0;
         if (getActionBar() != null) {
             value = getActionBar().getHeight();
+        } else {
+            TypedValue tv = new TypedValue();
+            if (getTheme().resolveAttribute(R.attr.actionBarSize, tv, true)) {
+                value = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+            }
+        }
+        System.out.println("action bar height is: " + value);
+        return value;
+    }
+
+    /**
+     * A helper method to get the height of the system navigation bar.
+     * @return The height of the navigation bar in pixels
+     */
+    private int getNavigationBarHeight() {
+        int value = 0;
+        int resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            value = getResources().getDimensionPixelSize(resourceId);
         }
         return value;
     }
 
+    /**
+     * A helper method to print the system screen dimensions to the console.
+     */
     private void printScreenInfo() {
         System.out.println( "'logical' density :" +  metrics.density);
         // density interms of dpi
@@ -131,6 +166,9 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         System.out.println("margin width : " + getResources().getDimension(R.dimen.activity_horizontal_margin));
     }
 
+    /**
+     * Declare the clickListener object for new moves.
+     */
     View.OnClickListener move = new View.OnClickListener() {
         /**
          * Override onClick method for cells - defined by the makeMove method below
@@ -149,8 +187,8 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
     private void makeMove(View view) {
         int buttonID = view.getId();
         // System.out.println("id is " + buttonID);
-        int row = (buttonID - 100) / 10;
-        int col = buttonID % 10;
+        int row = (buttonID) / 1000;
+        int col = buttonID % 1000;
         lastRowSelected = row;
         lastColSelected = col;
         // System.out.println("calling model's game state method with row " + row + " and col " + col);
@@ -242,6 +280,59 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
             }
         }
+
+        // add popup indicating win/loss
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        if (!gameState.getGameStatus() && gameState.didUserWin()) {
+            dialog.setCancelable(true);
+            dialog.setTitle("You won!");
+            dialog.setMessage(R.string.win_message);
+            dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
+                    startActivity(menuIntent);
+                }
+            });
+
+            dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
+                    newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    newGameIntent.putExtra("Level", gameLevelString);
+                    startActivity(newGameIntent);
+                }
+            });
+            dialog.show();
+
+        } else if (!gameState.getGameStatus()) {
+            dialog.setCancelable(true);
+            dialog.setTitle("You lost!");
+            dialog.setMessage(R.string.loss_message);
+            dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
+                    menuIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(menuIntent);
+                }
+            });
+
+            dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
+                    newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    newGameIntent.putExtra("Level", gameLevelString);
+                    startActivity(newGameIntent);
+                }
+            });
+            dialog.show();
+        }
+
+        // add score if appropriate
     }
 
 }

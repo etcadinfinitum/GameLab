@@ -11,12 +11,15 @@ import java.util.ArrayList;
 public class Scorekeeper {
 
     private ArrayList<Score> minesweeperLocal = new ArrayList<Score>(5);
+    private ArrayList<Score> tttLocal = new ArrayList<Score>(5);
 
     /**
      * Parameterless constructor.
      */
     public Scorekeeper() {
         // deserialize score lists
+
+
     }
 
     /**
@@ -25,7 +28,7 @@ public class Scorekeeper {
      * @param score The score of the newly won game, to be tested against the top scores in the existing ArrayList.
      * @return A boolean flag indicating whether the score is a top score
      */
-    public boolean checkNewTopScore(String game, int score) {
+    public boolean checkNewTopScore(GameName game, int score) {
         boolean isTopScore = false;
         ArrayList<Score> gameType = getGameType(game);
         for (Score thisScore : gameType) {
@@ -36,29 +39,42 @@ public class Scorekeeper {
         return isTopScore;
     }
 
-
-    private ArrayList<Score> getGameType(String game) {
+    /**
+     * Returns the appropriate ArrayList object for the game type being queried.
+     * @param game The GameName enumerated value
+     * @return The appropriate score array for the given game type
+     */
+    private ArrayList<Score> getGameType(GameName game) {
         ArrayList<Score> gameType;
         switch (game) {
-            case "Minesweeper":
+            case MINESWEEPER:
                 gameType = minesweeperLocal;
                 break;
+            case TICTACTOE:
+                gameType = tttLocal;
             default:
 
-                gameType = minesweeperLocal;
+                gameType = null;
                 break;
         }
         return gameType;
     }
 
-    public boolean addTopScore(String game, Score newScore) {
-        boolean isAdded = true;
+    /**
+     *
+     * @param game
+     * @param newScore
+     * @return
+     */
+    public boolean addTopScore(GameName game, Score newScore) {
+        boolean isAdded = false;
         try {
             ArrayList<Score> modList = getGameType(game);
             for (Score oldScore : modList) {
-                if (newScore.getScore() >= oldScore.getScore()) {
+                if (!isAdded && newScore.getScore() >= oldScore.getScore()) {
                     int newIdx = modList.indexOf(oldScore);
                     modList.add(newIdx, newScore);
+                    isAdded = true;
                 }
             }
 

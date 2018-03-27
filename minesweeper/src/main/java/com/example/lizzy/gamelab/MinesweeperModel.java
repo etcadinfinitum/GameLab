@@ -8,10 +8,7 @@ import java.util.Observer;
  */
 public class MinesweeperModel extends Observable {
 
-
     private GameSquare[][] squareTraits;
-
-    // private variables
     private boolean activeGame;
     private boolean didUserWinGame;
 
@@ -57,6 +54,9 @@ public class MinesweeperModel extends Observable {
             case CUSTOM: mineQty /= 4;
                     // need to work in user-specified dimensions
                 break;
+            default:
+                mineQty /= 6;
+                break;
         }
 
         //
@@ -90,9 +90,10 @@ public class MinesweeperModel extends Observable {
     /**
      * Helper method to locate new minefield cells, then recursively walk the board to increment
      * the surrounding cells' hint value. Called exclusively by determineSegmentValue.
-     * @param currX
-     * @param currY
-     * @param reps
+     * @param currX The current x-coordinate in the recursive pattern
+     * @param currY The current y-coordinate in the recursive pattern
+     * @param reps The number of cells away from the detected mine the current coordinates are; a value greater
+     *             than 1 will recursively walk back.
      */
     private void increment(int currX, int currY, int reps) {
         if (currX < 0 || currY < 0 || currX >= squareTraits.length ||
@@ -139,8 +140,8 @@ public class MinesweeperModel extends Observable {
 
     /**
      * Recursion helper method for uncovering clicked cells
-     * @param currX
-     * @param currY
+     * @param currX The current x-coordinate in the recursive pattern
+     * @param currY The current y-coordinate in the recursive pattern
      */
     private void uncoverSquares(int currX, int currY) {
         if (currX < 0 || currY < 0 || currX >= squareTraits.length ||
@@ -161,7 +162,12 @@ public class MinesweeperModel extends Observable {
         }
     }
 
-
+    /**
+     * A helper method to determine if the game is over. Sets internal boolean flags accordingly -
+     * if a game is over, activeGame is set to false. didUserWinGame is set true or false depending on
+     * whether mines are showing, with true being the value indicating that the user legitimately won
+     * the game.
+     */
     private void isGameOver() {
         if (activeGame) {
             boolean gameWon = true;

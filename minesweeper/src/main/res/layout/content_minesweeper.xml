@@ -8,58 +8,85 @@
     tools:context="com.example.lizzy.gamelab.Minesweeper_menu"
     tools:showIn="@layout/activity_minesweeper">
 
-    <Button
-        android:id="@+id/level_easy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginStart="2dp"
-        android:text="@string/level_easy"
-        app:layout_constraintBaseline_toBaselineOf="@+id/level_med"
-        app:layout_constraintEnd_toStartOf="@+id/level_med"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent1"
+        android:divider="@drawable/spacer_medium"
+        android:showDividers="middle"
+        android:padding="@dimen/spacing_medium">
 
-    <Button
-        android:id="@+id/level_med"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/level_medium"
-        app:layout_constraintEnd_toStartOf="@+id/level_hard"
-        app:layout_constraintStart_toEndOf="@+id/level_easy"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <LinearLayout
+            android:id="@+id/level_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/newcell"
+            android:divider="@drawable/spacer_medium"
+            android:showDividers="middle"
+            android:padding="@dimen/spacing_medium">
 
-    <Button
-        android:id="@+id/level_hard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/level_hard"
-        app:layout_constraintBaseline_toBaselineOf="@+id/level_med"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/level_med" />
+                <TextView
+                    android:id="@+id/ms_game_level_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level_picker"
+                    />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="47dp"
-        android:text="@string/level_picker"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/level_easy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level_easy"/>
 
-    <Button
-        android:id="@+id/new_game"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginStart="52dp"
-        android:text="@string/new_game"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/level_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level_medium"/>
+
+                <Button
+                    android:id="@+id/level_hard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level_hard"/>
+
+                <TextView
+                    android:id="@+id/ms_game_level_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select a level to see a hint about difficulty."
+                    />
+            </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_below="@+id/level_picker"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@drawable/spacer_medium"
+            android:showDividers="middle"
+            android:padding="@dimen/spacing_medium"
+            android:background="@color/newcell">
+            <TextView
+                android:id="@+id/start_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_game"
+                />
+            <Button
+                android:id="@+id/new_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_game"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

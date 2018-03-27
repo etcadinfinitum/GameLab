@@ -7,37 +7,81 @@
     android:layout_height="match_parent"
     tools:context="com.example.lizzy.gamelab.Menu">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/navigation" />
 
-    <Button
-        android:id="@+id/minesweeper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="115dp"
-        android:layout_marginRight="115dp"
-        android:layout_marginTop="49dp"
-        android:text="Minesweeper"
+        <LinearLayout
+            android:layout_below="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/spacer_medium"
+            android:showDividers="middle"
+            android:padding="@dimen/spacing_medium"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:background="@color/newcell">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:divider="@drawable/spacer_medium"
+                android:showDividers="middle"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/minesweeper"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:text="Minesweeper"
+                    android:background="@color/colorAccent1"/>
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/ttt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:text="Tic-Tac-Toe"
+                    android:background="@color/colorAccent2"/>
 
-    <Button
-        android:id="@+id/ttt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginTop="132dp"
-        android:text="Tic-Tac-Toe"
+            </LinearLayout>
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:divider="@drawable/spacer_medium"
+                android:showDividers="middle"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/boggle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:text="Toggle"
+                    android:background="@color/colorAccent3"/>
+
+                <Button
+                    android:id="@+id/snek"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:text="Snek"
+                    android:background="@color/colorAccent4"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
