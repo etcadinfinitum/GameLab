@@ -7,10 +7,58 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.lizzy.gamelab.Scoreboard"
     tools:showIn="@layout/activity_scoreboard">
-    <GridLayout
-        android:id="@+id/button_grid"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        />
+        android:fillViewport="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/spacing_medium"
+            android:divider="@drawable/spacer_medium"
+            android:showDividers="middle">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_activity_minesweeper"
+                    android:padding="@dimen/spacing_medium"
+                    android:textColor="@color/ms7"
+                    android:background="@color/colorAccent1"/>
+                <TableLayout
+                    android:id="@+id/ms_score_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_medium"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*" >
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_activity_tic_tac_toe_model"
+                    android:padding="@dimen/spacing_medium"
+                    android:textColor="@color/ms7"
+                    android:background="@color/colorAccent2"/>
+                <TableLayout
+                    android:id="@+id/ttt_score_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

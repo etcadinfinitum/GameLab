@@ -12,15 +12,24 @@
     <string name="level_picker">Pick your preferred level for this game:</string>
     <string name="new_game">Start The Game</string>
     <string name="title_activity_minesweeper_game">Minesweeper_game</string>
-    <string name="about_text">Thanks for stopping by! This application was created by Infinitum Industries. Copyright 2018.</string>
+    <string name="about_text"><b>Thanks for stopping by!</b> This application was created by Infinitum Industries.
+        Copyright 2018. \n\n<b>Scoring methodologies:</b> \nFor Minesweeper, the score of the player is determined
+        as a ratio of the number of mines to the total elapsed time of the game, with a level multiplier
+        applied. The multiplier is 1 for easy, 2 for medium, and 3 for hard. The 3BV score of the board
+        has not been calculated.
+    </string>
     <string name="title_activity_about_page">About Page</string>
     <string name="title_activity_main">Scoreboard</string>
     <string name="title_activity_scoreboard">Scoreboard</string>
-    <string name="title_activity_tic_tac_toe_menu">TicTacToe_menu</string>
-    <string name="title_activity_tic_tac_toe_model">TicTacToe_model</string>
+    <string name="title_activity_tic_tac_toe_menu">Tic-Tac-Toe Menu</string>
+    <string name="title_activity_tic_tac_toe_model">Tic-Tac-Toe</string>
     <string name="start_game">When you\'re ready, press "Start Game" to begin.</string>
     <string name="stalemate_message">Lol. Nobody won!</string>
     <string name="ttt_x_won">X won the game! Good job X\'ers!</string>
     <string name="ttt_o_won">O won the game! Good job O\'ers!</string>
+    <string name="top_score">You also got a top score! Enter your name here to be added to the leaderboard:</string>
+    <string name="anon">Anonymous</string>
+    <string name="ms_scores_title">Minesweeper Scores</string>
+    <string name="ttt_scores_title">Tic-Tac-Toe Scores</string>
 
 </resources>

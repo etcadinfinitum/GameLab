@@ -11,6 +11,7 @@ public class MinesweeperModel extends Observable {
     private GameSquare[][] squareTraits;
     private boolean activeGame;
     private boolean didUserWinGame;
+    private int mineQuant;
 
     /**
      * Constructor for game logic. Initializes board with
@@ -59,6 +60,8 @@ public class MinesweeperModel extends Observable {
                 break;
         }
         System.out.println("Creating board with # of mines: " + mineQty + ". Level is " + diff);
+
+        mineQuant = mineQty;
 
         //
         for (int i = 1; i <= mineQty; i++) {
@@ -213,6 +216,14 @@ public class MinesweeperModel extends Observable {
      */
     public boolean didUserWin() {
         return didUserWinGame;
+    }
+
+    /**
+     * An accessor method to get the mine quantity for this game.
+     * @return A count of the cells that contain mines for this board
+     */
+    public int getMineQuant() {
+        return mineQuant;
     }
 
 }

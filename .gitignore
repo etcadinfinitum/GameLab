@@ -1,6 +1,7 @@
 # Built application files
 /*/build/
 minesweeper/build/*
+build/
 
 # Crashlytics configuations
 com_crashlytics_export_strings.xml
@@ -36,3 +37,5 @@ local.properties
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+*.ser

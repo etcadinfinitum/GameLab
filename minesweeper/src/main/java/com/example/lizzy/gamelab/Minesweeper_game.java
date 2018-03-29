@@ -12,6 +12,7 @@ import java.util.Observable;
 import java.lang.Math;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridLayout;
 
 /**
@@ -22,7 +23,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
 
     protected GameDifficulty gameLevel = GameDifficulty.DUMMY;
     private String gameLevelString = "";
-    public Button[][] theButtons;
+    private Button[][] theButtons;
     private int boardHeight = 0;
     private int boardWidth = 0;
     private MinesweeperModel model;
@@ -31,6 +32,13 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
     private GameName gameType = GameName.MINESWEEPER;
     private float dpScale;
     private DisplayMetrics metrics;
+    private long startTime = 0;
+    private long endTime = 0;
+    private long scoreTime = 0;
+    private Scorekeeper scores;
+    private EditText winnerName;
+    private boolean addNewScore = false;
+    private int newScoreVal = 0;
 
     /**
      * The initializer for the minesweeper board.
@@ -191,6 +199,9 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
      * @param view The pressed cell to make the move on
      */
     private void makeMove(View view) {
+        if (lastRowSelected == -1) {
+            startTime = System.currentTimeMillis();
+        }
         int buttonID = view.getId();
         // System.out.println("id is " + buttonID);
         int row = (buttonID) / 1000;
@@ -259,6 +270,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
             }
         }
         if (! ((MinesweeperModel) gameState).getGameStatus()) {
+            endTime = System.currentTimeMillis();
             gameOver((MinesweeperModel) gameState);
         }
     }
@@ -269,10 +281,10 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
      */
     private void gameOver(MinesweeperModel gameState) {
         GameSquare[][] boardState = (gameState).getBoardState();
+
         // color cell of final move depending on game outcome - red if lost, green if won
         if (gameState.didUserWin())  {
             theButtons[lastRowSelected][lastColSelected].setBackgroundColor(getResources().getColor(R.color.winmove, null));
-            Scorekeeper scores = new Scorekeeper();
         } else {
             theButtons[lastRowSelected][lastColSelected].setBackgroundColor(getResources().getColor(R.color.ms3, null));
         }
@@ -287,11 +299,45 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
             }
         }
 
+        // add score if appropriate
+        if (gameState.didUserWin()) {
+            scores = new Scorekeeper(this);
+            scoreTime = (endTime - startTime) / 1000;
+            int multiplier = 0;
+            switch (gameLevel) {
+                case EASY:
+                    multiplier = 1;
+                    break;
+                case MEDIUM:
+                    multiplier = 2;
+                    break;
+                case HARD:
+                    multiplier = 3;
+                    break;
+                default:
+                    multiplier = 1;
+                    break;
+            }
+            newScoreVal = (int) Math.floor(gameState.getMineQuant() * multiplier * 40 / scoreTime);
+            if (scores.checkNewTopScore(gameType, newScoreVal)) {
+                addNewScore = true;
+                System.out.println("New top score registered - instantiating the textbox for winner name");
+                winnerName = new EditText(this);
+                winnerName.setHint(R.string.anon);
+                winnerName.setPadding(20,0,20,0);
+            }
+        }
+
         // add popup indicating win/loss
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                if (addNewScore) {
+                    Score newScore = new Score(winnerName.getText().toString(), newScoreVal, gameLevelString);
+                    scores.addTopScore(gameType, newScore);
+                    scores = null;
+                }
                 Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
                 menuIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(menuIntent);
@@ -301,6 +347,11 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                if (addNewScore) {
+                    Score newScore = new Score(winnerName.getText().toString(), newScoreVal, gameLevelString);
+                    scores.addTopScore(gameType, newScore);
+                    scores = null;
+                }
                 Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
                 newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 while (newGameIntent.getExtras() != null) {
@@ -312,12 +363,18 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 startActivity(newGameIntent);
             }
         });
-        if (!gameState.getGameStatus() && gameState.didUserWin()) {
+        if (addNewScore) {
+            dialog.setCancelable(true);
+            dialog.setTitle("You won!");
+            dialog.setMessage(getString(R.string.win_message) + " " + getString(R.string.top_score));
+            dialog.setView(winnerName);
+            dialog.show();
+        } else if (!gameState.getGameStatus() && gameState.didUserWin()) {
             dialog.setCancelable(true);
             dialog.setTitle("You won!");
             dialog.setMessage(R.string.win_message);
+            dialog.setView(winnerName);
             dialog.show();
-
         } else if (!gameState.getGameStatus()) {
             dialog.setCancelable(true);
             dialog.setTitle("You lost!");
@@ -325,7 +382,6 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
             dialog.show();
         }
 
-        // add score if appropriate
     }
 
 }
