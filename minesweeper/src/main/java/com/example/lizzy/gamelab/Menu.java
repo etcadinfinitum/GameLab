@@ -10,9 +10,14 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 
+/**
+ * The class managing the application main menu and the corresponding buttons for each available game.
+ */
 public class Menu extends AppCompatActivity {
 
     private TextView mTextMessage;
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -39,6 +44,10 @@ public class Menu extends AppCompatActivity {
         }
     };
 
+    /**
+     * The initializer for the activity.
+     * @param savedInstanceState The
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +73,14 @@ public class Menu extends AppCompatActivity {
                 goToTicTacToe();
             }
         });
+
+        Button boggle = (Button) findViewById(R.id.boggle);
+        boggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToBoggle();
+            }
+        });
     }
 
     private void goToMinesweeperMenu() {
@@ -74,6 +91,12 @@ public class Menu extends AppCompatActivity {
 
     private void goToTicTacToe() {
         Intent intent = new Intent(this, TicTacToe_game.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void goToBoggle() {
+        Intent intent = new Intent(this, Boggle_Game.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

@@ -1,0 +1,88 @@
+package com.example.lizzy.gamelab;
+
+import android.widget.Button;
+
+import java.util.List;
+
+/**
+ * A custom linkedList implementation (singly linked), which handles searching for previously added nodes
+ * which refer to the same button.
+ */
+public class LinkedList {
+
+    private ListNode start;
+
+    /**
+     * Constructor for the new LinkedList. Creates an empty list.
+     */
+    public LinkedList() {
+        start = null;
+    }
+
+    /**
+     * A public method to add the next selected node in the list to the list.
+     * @param letter The letter to be added next
+     * @param button The button to be associated with the node
+     * @return A boolean value indicating whether the node was added (true --> added, false --> already existed, broke link to subsequent nodes)
+     */
+    public boolean add(String letter, Button button) {
+        boolean isAdded = false;
+        ListNode existingNode = contains(button);
+        if (existingNode == null) {
+            ListNode currNode = start;
+            while (currNode != null) {
+                currNode = currNode.getNext();
+            }
+            ListNode newNode = new ListNode(letter, button);
+            currNode.setLink(newNode);
+            isAdded = true;
+        } else {
+            breakList(existingNode);
+            isAdded = false;
+        }
+        return isAdded;
+    }
+
+    /**
+     * A public method to set the argument node to be the last node.
+     * @param node The node which should mark the end of the modified list
+     * @return A boolean value indicating whether the list was successfully broken (true --> broken)
+     */
+    public boolean breakList(ListNode node) {
+        node.breakLink();
+        return true;
+    }
+
+    /**
+     * A public method which determines if the argument button is already associated with an existing node
+     * in the list. Returns null if not already associated (new selection, new node)
+     * @param button The button clicked by the user
+     * @return The ListNode associated with the provided button; returns null if not already associated
+     */
+    public ListNode contains(Button button) {
+        ListNode existingNode = null;
+        ListNode currNode = start;
+        while (existingNode == null && currNode != null) {
+            if (currNode.getButton().equals(button)) {
+                existingNode = currNode;
+            }
+            currNode = currNode.getNext();
+        }
+        return existingNode;
+    }
+
+    /**
+     * An accessor method to get the entire ordered string described by this linkedList.
+     * @return The string represented by the linkedlist
+     */
+    public String getFullString() {
+        String result = "";
+        ListNode currNode = start;
+        while (currNode != null) {
+            result += currNode.getLetter();
+            currNode = currNode.getNext();
+        }
+        return result;
+    }
+
+}
