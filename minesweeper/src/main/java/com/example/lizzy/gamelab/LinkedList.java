@@ -29,13 +29,18 @@ public class LinkedList {
         boolean isAdded = false;
         ListNode existingNode = contains(button);
         if (existingNode == null) {
-            ListNode currNode = start;
-            while (currNode != null) {
-                currNode = currNode.getNext();
-            }
             ListNode newNode = new ListNode(letter, button);
-            currNode.setLink(newNode);
-            isAdded = true;
+            if (start != null) {
+                ListNode currNode = start;
+                while (currNode.getNext() != null) {
+                    currNode = currNode.getNext();
+                }
+                currNode.setLink(newNode);
+                isAdded = true;
+            } else {
+                start = newNode;
+                isAdded = true;
+            }
         } else {
             breakList(existingNode);
             isAdded = false;
@@ -83,6 +88,22 @@ public class LinkedList {
             currNode = currNode.getNext();
         }
         return result;
+    }
+
+    /**
+     * A helper method to get the last node in the list.
+     * @return The last node in this list
+     */
+    public ListNode getLastNode() {
+        ListNode currNode = start;
+        if (currNode == null) {
+            return null;
+        } else {
+            while (currNode.getNext() != null) {
+                currNode = currNode.getNext();
+            }
+            return currNode;
+        }
     }
 
 }

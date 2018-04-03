@@ -6,50 +6,82 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Boggle_Game"
-    tools:showIn="@layout/activity_boggle__game">
+    tools:showIn="@layout/activity_boggle__game"
+    android:background="@color/colorAccent3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="@dimen/spacing_medium"
+        android:divider="@drawable/spacer_medium"
+        android:showDividers="middle">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:divider="@drawable/spacer_medium"
+            android:showDividers="middle">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:divider="@drawable/spacer_medium"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/boggle_timer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:text="@string/boggle_timer"
+                    android:padding="@dimen/spacing_medium"
+                    android:background="@color/newcell"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
 
+
+                <TextView
+                    android:id="@+id/boggle_timer_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/boggle_timer"
+                    android:padding="@dimen/spacing_medium"
+                    android:background="@color/newcell"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:divider="@drawable/spacer_medium"
+                android:showDividers="middle">
 
                 <TextView
+                    android:id="@+id/boggle_hint_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/boggle_hint_text"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_medium"
+                    android:background="@color/newcell"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/boggle_get_hint"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:background="@color/selected"/>
 
             </LinearLayout>
 
@@ -63,6 +95,9 @@
             android:rowCount="4"
             android:columnOrderPreserved="true"
             android:rowOrderPreserved="true"
+            android:layout_gravity="center"
+            android:background="@color/selected"
+            android:orientation="horizontal"
             >
 
         </GridLayout>
@@ -74,7 +109,11 @@
             <TableLayout
                 android:id="@+id/boggle_words"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/selected"
+                android:shrinkColumns="true"
+                android:stretchColumns="true">
 
             </TableLayout>
 

@@ -1,7 +1,11 @@
 package com.example.lizzy.gamelab;
 
+import android.content.Context;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
@@ -14,6 +18,11 @@ import java.util.Random;
 public class Boggle_Model extends Observable {
 
     String[] thisBoard = new String[16];
+    HashSet<String> dictionary;
+
+    /**
+     * --------------- SETTING UP THE BOARD ---------------
+     */
 
     /**
      * The constructor for the game model. Adds the game view class as an observer, determines the
@@ -23,6 +32,7 @@ public class Boggle_Model extends Observable {
         super();
         addObserver(game);
         generateDice();
+        getDictionary((Context) game);
 
         setChanged();
         notifyObservers();
@@ -78,41 +88,59 @@ public class Boggle_Model extends Observable {
 
     }
 
+
+    /**
+     * A helper method which retrieves the HashSet dictionary and loads into memory.
+     */
+    private void getDictionary(Context appContext) {
+        try {
+            // AssetManager getDictionaryAsset = new AssetManager("dictionary.ser");
+            ObjectInputStream stream = new ObjectInputStream(appContext.getAssets().open("dictionary.ser"));
+            dictionary = (HashSet<String>) stream.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("---------> building dictionary from scratch (no .ser file) <---------");
+        } catch (IOException e) {
+            System.out.println("---------> an ioException occurred <---------");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("---------> an unspecified error occurred <---------");
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * --------------- VALIDATING DURING GAMEPLAY ---------------
+     */
+
     /**
      * A method which is going to be invoked by the game view, which will provide a new word input by
-     * the user and determine whether it belongs to the dictionary.
-     * @param newWord
-     * @return
+     * the user and determine whether it belongs to the dictionary. After the analysis has been done,
+     * the method will call the Observable notifyObservers method and pass an argument to the observers.
+     * The processed string will be the argument, and a null value will be passed if the user's word
+     * was not a valid selection (ie not contained in the dictionary).
+     * @param newWord The user's word as a linked list
      */
-    public boolean makeMove(LinkedList<String> newWord) {
-        long wordValue = convertWordToLong(newWord);
-        return validateWord(wordValue);
+    public void makeMove(LinkedList newWord) {
+        String wordValue = newWord.getFullString();
+        boolean valid = validateWord(wordValue);
+        if (!valid) {
+            wordValue = null;
+        }
+        setChanged();
+        notifyObservers(wordValue);
     }
 
     /**
-     * A helper method intended to convert the user's input into a more condensed format that can
-     * be compared against the dictionary dataset for inclusion. Implementation is tentatively anticipated
-     * as a string-to-long conversion as described here: https://stackoverflow.com/questions/2276641/way-to-store-a-large-dictionary-with-low-memory-footprint-fast-lookups-on-and
-     * @param word The set of characters that the user selected on the board, expressed as a LinkedList (for now)
-     * @return The representation of the user's word as a long type (for use in the implementation linked above
+     * A helper method to compare the stringified word to the words contained in the dictionary.
+     * @param wordValue The user's word as a String
+     * @return A boolean flag indicating whether the word is valid (true --> valid)
      */
-    private long convertWordToLong(LinkedList<String> word) {
-        long wordValue = 0;
-        if (word.size() > 12) {
-            // use 13+ character array to validate word
-            String wordString = "";
-            for (String element : word) {
-                wordString += element;
-            }
-        } else {
-            // use long value array
+    private boolean validateWord(String wordValue) {
+        if (dictionary.contains(wordValue)) {
+            return true;
         }
-        return wordValue;
-    }
-
-    private boolean validateWord(long wordValue) {
-
-        return true;
+        return false;
     }
 
     /**
@@ -123,5 +151,6 @@ public class Boggle_Model extends Observable {
     public String[] getThisBoard() {
         return thisBoard;
     }
+
 
 }

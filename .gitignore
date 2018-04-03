@@ -38,4 +38,4 @@ local.properties
 ehthumbs.db
 Thumbs.db
 
-*.ser
+minesweeper/src/main/java/com/example/lizzy/gamelab/words.txt

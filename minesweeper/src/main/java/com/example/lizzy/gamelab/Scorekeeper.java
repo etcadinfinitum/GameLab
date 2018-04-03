@@ -20,6 +20,7 @@ public class Scorekeeper implements Serializable {
     private ArrayList<ArrayList> scoreLists;
     private ArrayList<Score> minesweeperLocal;
     private ArrayList<Score> tttLocal;
+    private ArrayList<Score> boggleLocal;
     private Context appReference;
 
     /**
@@ -45,25 +46,13 @@ public class Scorekeeper implements Serializable {
                     case 1:
                         tttLocal = (ArrayList<Score>) scoreLists.get(i);
                         break;
-
+                    case 2:
+                        boggleLocal = (ArrayList<Score>) scoreLists.get(i);
+                        break;
                 }
-                /*
-                -------debugging code-------
 
-                System.out.println("Inspecting list no. " + i + "; class type of this list is " + scoreLists.get(i).getClass());
-                for (int subIdx = 0; subIdx < scoreLists.get(i).size(); subIdx++) {
-                    System.out.println("Inspecting sublistlist no. " + subIdx + " of score list no. " + i +
-                            "; class type of this list is " + scoreLists.get(i).get(subIdx).getClass());
-                }
-                */
             }
-            /*
-            FileInputStream input = new FileInputStream("scores.ser");
-            ObjectInputStream scoreObject = new ObjectInputStream(input);
-            scoreLists = (ArrayList<ArrayList>) scoreObject.readObject();
-            minesweeperLocal = (ArrayList<Score>) scoreLists.get(0);
-            tttLocal = (ArrayList<Score>) scoreLists.get(1);
-            */
+
         } catch (FileNotFoundException e){
             e.printStackTrace();
             System.out.println("FileNotFoundException occurred. Most likely, scores.ser could not be found or is in a different directory.");
@@ -73,6 +62,7 @@ public class Scorekeeper implements Serializable {
             tttLocal = new ArrayList<>(5);
             scoreLists.add(0, minesweeperLocal);
             scoreLists.add(1, tttLocal);
+            scoreLists.add(2,boggleLocal);
         } catch (ClassCastException e) {
 
         } catch (Exception e) {
@@ -94,13 +84,16 @@ public class Scorekeeper implements Serializable {
             if (gameType.size() > 0) {
                 for (Score thisScore : gameType) {
                     if (thisScore == null || score >= thisScore.getScore()) {
+                        System.out.println("----> Adding new top score - genuine new top score!");
                         isTopScore = true;
                     }
                 }
                 if (!isTopScore && gameType.size() < 5) {
+                    System.out.println("----> Adding new top score (called in Scorekeeper checkNewScore method) - high score count is less than 5");
                     isTopScore = true;
                 }
             } else {
+                System.out.println("----> Adding new top score (called in Scorekeeper checkNewScore method) - no scores have been added yet");
                 isTopScore = true;
             }
         }
@@ -121,6 +114,9 @@ public class Scorekeeper implements Serializable {
                 break;
             case TICTACTOE:
                 gameType = tttLocal;
+                break;
+            case BOGGLE:
+                gameType = boggleLocal;
                 break;
             default:
                 gameType = null;
