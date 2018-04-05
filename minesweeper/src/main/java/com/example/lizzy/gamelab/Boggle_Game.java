@@ -17,6 +17,7 @@ import android.widget.GridLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Observer;
 import java.util.Observable;
@@ -35,12 +36,15 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private EditText winnerName;
     private String gameLevelString = "4x4";
     private Scorekeeper scores;
-    private Button lastButton;
     private Button[][] boardButtons;
     private GridLayout boardShell;
     private int boardSize;
     private TableRow currentRow;
     private TableLayout words;
+    private boolean addNewScore;
+    private TextView timerText;
+    private int userScore;
+    private boolean activeGame;
 
     /**
      * The initializer for the activity.
@@ -56,10 +60,12 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
 
         boardSize = 16;
 
-        // instantiate the model
-        model = new Boggle_Model(this);
+
         // instantiate the list of accepted words
         userWords = new ArrayList<>(50);
+
+        // instantiate the model
+        model = new Boggle_Model(this);
         // instantiate the linked list for current submission
         currentWord = new LinkedList();
 
@@ -101,7 +107,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         words = (TableLayout) findViewById(R.id.boggle_words);
 
 
-        final TextView timerText = (TextView) findViewById(R.id.boggle_timer_time);
+        timerText = (TextView) findViewById(R.id.boggle_timer_time);
         timerText.setText("01:01");
 
         CountDownTimer timer = new CountDownTimer(61000, 1000) {
@@ -119,7 +125,10 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
 
             @Override
             public void onFinish() {
-                model.makeMove(currentWord);
+                activeGame = false;
+                if (currentWord != null) {
+                    model.makeMove(currentWord);
+                }
                 for (int row = 0; row < 4; row++) {
                     for (int col = 0; col < 4; col++) {
                         boardButtons[row][col].setEnabled(false);
@@ -130,11 +139,17 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
             }
         };
         timer.start();
+        activeGame = true;
 
     }
 
     public ViewGroup.OnTouchListener boardListener = new ViewGroup.OnTouchListener() {
-
+        /**
+         * Custom implementation for how GridLayout object handles user gestures and interaction.
+         * @param view The view transmitting the motion
+         * @param event The motion object that is being transmitted via the listener
+         * @return A boolean flag indicating whether the event was handled by this method (true --> handled)
+         */
         @Override
         public boolean onTouch(View view, MotionEvent event) {
             int action = event.getAction();
@@ -145,7 +160,6 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                     // System.out.println("---> detected action " + event.getAction() + " (0=down, 2=move), checking to see if button text should be added");
                     Button button = getButtonFromScreen(event.getX(), event.getY());
                     if (button != null) {
-                        lastButton = button;
                         CharSequence text = button.getText();
                         // System.out.println("adding letter from button: " + text);
                         currentWord.add((text.toString()).toLowerCase(), button);
@@ -176,14 +190,16 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     public void update(Observable model, Object someObject) {
         // get user's word and validate it against dictionary
         String word = (String) someObject;
-        if (word != null) {
+        if (word != null && !userWords.contains(word)) {
             userWords.add(word);
-
             // if valid, add to game's score table
             TextView newWord = new TextView(this);
             newWord.setText(word);
             TextView newWordScore = new TextView(this);
             newWordScore.setText(Integer.toString(calculateWordScore(word)));
+
+
+            Toast.makeText(this,R.string.boggle_word_added,Toast.LENGTH_SHORT).show();
 
             // dynamically determine if new row should be created (assuming display should be 6 columns total)
             if (userWords.size() % 3 == 1) {
@@ -195,6 +211,12 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
             } else {
                 currentRow.addView(newWord);
                 currentRow.addView(newWordScore);
+            }
+        } else {
+            if (activeGame && word == null) {
+                Toast.makeText(this, R.string.boggle_bad_word, Toast.LENGTH_SHORT).show();
+            } else if (userWords.contains(word)) {
+                Toast.makeText(this, R.string.boggle_duplicate_word, Toast.LENGTH_SHORT).show();
             }
         }
         currentWord = null;
@@ -241,8 +263,8 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
      */
     private void gameOver() {
         scores = new Scorekeeper(this);
-        final int userScore = calculateScore();
-        final boolean addNewScore = scores.checkNewTopScore(GameName.BOGGLE, userScore);
+        userScore = calculateScore();
+        addNewScore = scores.checkNewTopScore(GameName.BOGGLE, userScore);
         if (addNewScore) {
             winnerName = new EditText(this);
             winnerName.setHint(R.string.anon);
@@ -251,7 +273,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         for (int i = 0; i < userWords.size(); i++) {
             words += userWords.get(i) + " ";
         }
-        System.out.println("game over. words added to score list are: " + words);
+        // System.out.println("game over. words added to score list are: " + words);
 
         // add popup indicating win/loss
 

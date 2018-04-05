@@ -5,7 +5,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.TextView;
 
 public class AboutPage extends AppCompatActivity {
 
@@ -16,6 +18,9 @@ public class AboutPage extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // enable link "movement" actions when user clicks on HTML-hyperlinked string
+        TextView theText = (TextView) findViewById(R.id.about_text);
+        theText.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 }

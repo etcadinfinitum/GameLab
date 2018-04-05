@@ -36,6 +36,7 @@ public class Scoreboard extends AppCompatActivity {
         currentScores = new Scorekeeper(this);
         addMinesweeperScores();
         addTictactoeScores();
+        addBoggleScores();
     }
 
     /**
@@ -60,14 +61,43 @@ public class Scoreboard extends AppCompatActivity {
     }
 
     /**
+     * A helper method to add Boggle scores to the scoreboard.
+     */
+    private void addBoggleScores() {
+        String text = "";
+        TableLayout bScoreTable = (TableLayout) findViewById(R.id.boggle_score_table);
+        ArrayList<Score> bScores = currentScores.getGameType(GameName.BOGGLE);
+        bScoreTable.addView(new TableRow(this),0);
+        if (bScores.size() < 1) {
+            TableRow emptyRow = addRowForEmptyTable();
+            bScoreTable.addView(emptyRow);
+        } else {
+            TableRow header = addHeaderRow();
+            bScoreTable.addView(header);
+            for (int i = 0; i < bScores.size(); i++) {
+                TableRow newRow = addRow(bScores.get(i), i);
+                bScoreTable.addView(newRow);
+            }
+        }
+    }
+
+    /**
      * A helper method to add Tic-Tac-Toe scores to the scoreboard.
      */
     private void addTictactoeScores() {
         String text = "";
-        TableLayout tttScoreText = (TableLayout) findViewById(R.id.ttt_score_table);
+        TableLayout tttScoreTable = (TableLayout) findViewById(R.id.ttt_score_table);
         ArrayList<Score> tttScores = currentScores.getGameType(GameName.TICTACTOE);
-        for (int i = 0; i < tttScores.size(); i++) {
-            // some stuff here
+        if (tttScores.size() < 1) {
+            TableRow emptyRow = addRowForEmptyTable();
+            tttScoreTable.addView(emptyRow);
+        } else {
+            TableRow header = addHeaderRow();
+            tttScoreTable.addView(header);
+            for (int i = 0; i < tttScores.size(); i++) {
+                TableRow newRow = addRow(tttScores.get(i), i);
+                tttScoreTable.addView(newRow);
+            }
         }
     }
 

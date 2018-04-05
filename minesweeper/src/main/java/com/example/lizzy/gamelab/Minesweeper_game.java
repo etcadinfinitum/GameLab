@@ -324,7 +324,6 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 System.out.println("New top score registered - instantiating the textbox for winner name");
                 winnerName = new EditText(this);
                 winnerName.setHint(R.string.anon);
-                winnerName.setPadding(20,0,20,0);
             }
         }
 

@@ -111,9 +111,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/selected"
-                android:shrinkColumns="true"
-                android:stretchColumns="true">
+                android:padding="@dimen/spacing_medium"
+                android:background="@color/newcell"
+                android:stretchColumns="*"
+                android:shrinkColumns="*">
 
             </TableLayout>
 

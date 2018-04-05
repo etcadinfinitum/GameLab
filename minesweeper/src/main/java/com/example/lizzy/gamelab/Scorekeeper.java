@@ -57,12 +57,13 @@ public class Scorekeeper implements Serializable {
             e.printStackTrace();
             System.out.println("FileNotFoundException occurred. Most likely, scores.ser could not be found or is in a different directory.");
             System.out.println("Creating new ArrayList objects to serialize");
-            scoreLists = new ArrayList<>(2);
+            scoreLists = new ArrayList<>(3);
             minesweeperLocal = new ArrayList<>(5);
             tttLocal = new ArrayList<>(5);
+            boggleLocal = new ArrayList<>(5);
             scoreLists.add(0, minesweeperLocal);
             scoreLists.add(1, tttLocal);
-            scoreLists.add(2,boggleLocal);
+            scoreLists.add(2, boggleLocal);
         } catch (ClassCastException e) {
 
         } catch (Exception e) {

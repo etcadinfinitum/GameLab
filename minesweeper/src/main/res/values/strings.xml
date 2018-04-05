@@ -13,15 +13,32 @@
     <string name="new_game">Start The Game</string>
     <string name="title_activity_minesweeper_game">Minesweeper_game</string>
     <string name="about_text"><b>Thanks for stopping by!</b> This application was created by Infinitum Industries.
-        Copyright 2018. \n\n<b>Scoring methodologies:</b> \nFor Minesweeper, the score of the player is determined
+        Copyright 2018. \n\n<b>Scoring Methodologies:</b> \n\nFor Minesweeper, the score of the player is determined
         as a ratio of the number of mines to the total elapsed time of the game, with a level multiplier
-        applied. The multiplier is 1 for easy, 2 for medium, and 3 for hard. The 3BV score of the board
-        has not been calculated.
+        applied. The multiplier is 1 for easy, 2 for medium, and 3 for hard. An additional multiplier of 4 is applied
+        to all scores, and then floor rounding is applied to the resulting score. The 3BV score of the board instance
+        is not calculated. \n\nBoggle is scored according to traditional rules: \n<ul><li>Words with fewer than
+        3 letters do not earn any points.</li>\n<li>3 or 4 letters: 1 point</li>\n<li>5 letters: 2 points</li>\n<li>6
+        letters: 3 points</li>\n<li>7 letters: 5 points</li>\n<li>8+ letters: 11 points</li>\n<li>The "Qu" letter
+        combination counts as two letters.</li>\n<li>Repeated words are not counted towards the score, even if
+        they are composed from a different distinct combination of tiles.</li></ul>\n\n
+        <b>About the Author</b>\n\nThis project was intended as a proof-of-concept in Android development for
+        a lowly Computer Science undergrad. Find out more about their work on their <a href="https://etcadinfinitum.github.io/">
+            GitHub Pages
+        </a> site.
+        \n\n<b>Credits and Acknowledgements:</b>
+        \n\nSeveral individuals were instrumental in the development and testing process of this application.
+        <a href="https://github.com/MissElle" target="_blank">@MissElle</a> was kind enough to offer UI feedback.
+        <a href="https://github.com/mchorton" target="_blank">@mchorton</a> was kind enough to ooh and ahh when
+        requested. The Boggle implementation would not have been possible without an existing "dictionary" of
+        English language words; this implementation uses <a href="https://github.com/dwyl/english-words" target="_blank">this repo
+        </a> and credit goes to <a href="https://dwyl.com/">DWYL</a> for making the dictionary publicly
+        available. Cheers!
     </string>
     <string name="title_activity_about_page">About Page</string>
     <string name="title_activity_main">Scoreboard</string>
     <string name="title_activity_scoreboard">Scoreboard</string>
-    <string name="title_activity_tic_tac_toe_menu">Tic-Tac-Toe Menu</string>
+    <string name="title_activity_tic_tac_toe_menu">Tic-Tac-Toe</string>
     <string name="title_activity_tic_tac_toe_model">Tic-Tac-Toe</string>
     <string name="start_game">When you\'re ready, press "Start Game" to begin.</string>
     <string name="stalemate_message">Lol. Nobody won!</string>
@@ -35,5 +52,8 @@
     <string name="boggle_timer">Timer:</string>
     <string name="boggle_hint_text">3 Hints Remaining</string>
     <string name="boggle_get_hint">Get Hint</string>
+    <string name="boggle_bad_word">That was not a valid word. Try again.</string>
+    <string name="boggle_duplicate_word">You already added that word in this game. Try again.</string>
+    <string name="boggle_word_added">Word added.</string>
 
 </resources>
