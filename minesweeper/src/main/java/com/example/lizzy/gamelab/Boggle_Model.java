@@ -17,8 +17,8 @@ import java.util.Random;
  */
 public class Boggle_Model extends Observable {
 
-    String[] thisBoard = new String[16];
-    HashSet<String> dictionary;
+    private String[] thisBoard = new String[16];
+    private HashSet<String> dictionary;
 
     /**
      * --------------- SETTING UP THE BOARD ---------------
@@ -136,7 +136,7 @@ public class Boggle_Model extends Observable {
      * @param wordValue The user's word as a String
      * @return A boolean flag indicating whether the word is valid (true --> valid)
      */
-    private boolean validateWord(String wordValue) {
+    public boolean validateWord(String wordValue) {
         if (dictionary.contains(wordValue)) {
             return true;
         }

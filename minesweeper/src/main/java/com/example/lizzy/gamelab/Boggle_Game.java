@@ -45,6 +45,8 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private TextView timerText;
     private int userScore;
     private boolean activeGame;
+    private Button hintButton;
+    private String[] hintWords;
 
     /**
      * The initializer for the activity.
@@ -140,6 +142,21 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         };
         timer.start();
         activeGame = true;
+
+        hintWords = new String[3];
+
+        hintButton = (Button) findViewById(R.id.boggle_get_hint);
+        hintButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("hint button was clicked. calling findHint()");
+                findHint();
+                hint--;
+                if (hint == 0) {
+                    hintButton.setEnabled(false);
+                }
+            }
+        });
 
     }
 
@@ -264,7 +281,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private void gameOver() {
         scores = new Scorekeeper(this);
         userScore = calculateScore();
-        addNewScore = scores.checkNewTopScore(GameName.BOGGLE, userScore);
+        addNewScore = scores.checkNewTopScore(GameName.BOGGLE, userScore) && userScore > 0;
         if (addNewScore) {
             winnerName = new EditText(this);
             winnerName.setHint(R.string.anon);
@@ -344,6 +361,46 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
             }
         }
         return null;
+    }
+
+    private void findHint() {
+        boolean wordFound = false;
+        for (int i = 0; i < 16; i++) {
+            while (!wordFound) {
+                int row = i / 4;
+                int col = i % 4;
+                wordFound = searchBoard(row, col, new LinkedList());
+            }
+        }
+    }
+
+    private boolean searchBoard(int row, int col, LinkedList word) {
+        if (row < 0 || row > 3 || col < 0 || col > 3) {
+            // do nothing; resolve recursive call
+            return false;
+        } else {
+            word.add(boardButtons[row][col].getText().toString().toLowerCase(), boardButtons[row][col]);
+            System.out.println("in searchBoard method, current word being inspected is: " + word.getFullString()
+                    + "; row idx " + row + " col idx " + col);
+            if (word.getFullString().length() > 2 && model.validateWord(word.getFullString()) && !userWords.contains(word.getFullString())) {
+                System.out.println("word passed test! word is: " + word.getFullString()
+                        + "; row idx " + row + " col idx " + col);
+                hintWords[3-hint] = word.getFullString();
+                Toast.makeText(this, "Hint is: " + word.getFullString(), Toast.LENGTH_SHORT).show();
+                return true;
+            } else {
+                System.out.println("that word was not found: " + word.getFullString()
+                        + "; incrementing indeces");
+                return searchBoard(row + 1, col + 1, word) ||
+                searchBoard(row - 1, col + 1, word) ||
+                searchBoard(row + 1, col - 1, word) ||
+                searchBoard(row - 1, col - 1, word) ||
+                searchBoard(row, col + 1, word) ||
+                searchBoard(row, col - 1, word) ||
+                searchBoard(row + 1, col, word) ||
+                searchBoard(row - 1, col, word);
+            }
+        }
     }
 
 }
