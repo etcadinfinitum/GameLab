@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 /**
  * View/controller class for the minesweeper game. Acts as an Observer to the model class.
@@ -107,6 +108,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 theButtons[row][col] = new Button(this);
                 theButtons[row][col].setId((1000 * row) + col);
                 theButtons[row][col].setOnClickListener(move);
+                theButtons[row][col].setOnLongClickListener(flag);
                 theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.newcell, null));
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec(row, 1), GridLayout.spec(col, 1));
                 params.width = buttonSizeX;
@@ -191,6 +193,42 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         @Override
         public void onClick(View view) {
             makeMove(view);
+        }
+    };
+
+    /**
+     * Declare the long click listener for flagging cells.
+     */
+    View.OnLongClickListener flag = new View.OnLongClickListener() {
+        /**
+         * Override onLongClick method for cells - defined internally. Changes cell background, sets
+         * new View.OnClickListener to the flagged cell, and creates a Toast notification to notify the
+         * user of the change.
+         * @param view The cell that detected the long click
+         * @return A boolean flag indicating whether the motion event was handled
+         */
+        @Override
+        public boolean onLongClick(View view) {
+            int id = view.getId();
+            int row = id / 1000;
+            int col = id % 1000;
+            theButtons[row][col].setOnClickListener(new View.OnClickListener() {
+                /**
+                 * Resets the flagged cell to a normal clickable cell.
+                 * @param v The view that is being unflagged to a regular cell
+                 */
+                @Override
+                public void onClick(View v) {
+                    v.setOnClickListener(move);
+                    v.setOnLongClickListener(flag);
+                    v.setBackgroundColor(getResources().getColor(R.color.newcell, null));
+                    Toast.makeText(getApplicationContext(), "Mine flag removed from selected cell.", Toast.LENGTH_SHORT).show();
+                }
+            });
+            theButtons[row][col].setOnLongClickListener(null);
+            theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.ms8, null));
+            Toast.makeText(getApplicationContext(), "Cell flagged as a mine!", Toast.LENGTH_SHORT).show();
+            return true;
         }
     };
 

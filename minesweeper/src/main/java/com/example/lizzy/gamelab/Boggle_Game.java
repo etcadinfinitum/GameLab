@@ -46,7 +46,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private int userScore;
     private boolean activeGame;
     private Button hintButton;
-    private String[] hintWords;
+    private ArrayList<String> hintWords;
 
     /**
      * The initializer for the activity.
@@ -143,7 +143,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         timer.start();
         activeGame = true;
 
-        hintWords = new String[3];
+        hintWords = new ArrayList<String>(4);
 
         hintButton = (Button) findViewById(R.id.boggle_get_hint);
         hintButton.setOnClickListener(new View.OnClickListener() {
@@ -363,29 +363,52 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         return null;
     }
 
+    /**
+     * A helper method to find a valid hint word in the current board setup. sets up search to be passed
+     * into recursive searchBoard() method.
+     */
     private void findHint() {
         boolean wordFound = false;
         for (int i = 0; i < 16; i++) {
-            while (!wordFound) {
-                int row = i / 4;
-                int col = i % 4;
-                wordFound = searchBoard(row, col, new LinkedList());
+            int row = i / 4;
+            int col = i % 4;
+            wordFound = searchBoard(row, col, new LinkedList());
+            if (wordFound) {
+                break;
             }
         }
     }
 
+    /**
+     * A recursive helper method to search the board for a valid word that has not previously been
+     * selected by the user. The method is intended to recurse through the board until
+     * @param row The row index of the board that is being tested
+     * @param col The column index of the board that is being tested
+     * @param word The word currently being assembled
+     * @return A boolean flag indicating whether a valid word was found (true --> valid word was found)
+     */
     private boolean searchBoard(int row, int col, LinkedList word) {
-        if (row < 0 || row > 3 || col < 0 || col > 3) {
+        // define terminal conditions:
+        // idx out of bounds, currently investigated cell is already part
+        // of the word search, or the word search is excessively long
+        if (row < 0 || row > 3 || col < 0 || col > 3 || word.contains(boardButtons[row][col]) != null || word.size() > 5) {
             // do nothing; resolve recursive call
             return false;
-        } else {
+        }
+
+        // define recursion conditions:
+        // add the currently investigated cell to the search word.
+        // test the newly constructed word for validity.
+        //
+          else {
             word.add(boardButtons[row][col].getText().toString().toLowerCase(), boardButtons[row][col]);
             System.out.println("in searchBoard method, current word being inspected is: " + word.getFullString()
                     + "; row idx " + row + " col idx " + col);
-            if (word.getFullString().length() > 2 && model.validateWord(word.getFullString()) && !userWords.contains(word.getFullString())) {
+            if (word.getFullString().length() > 2 && model.validateWord(word.getFullString()) && !userWords.contains(word.getFullString())
+                    && !hintWords.contains(word.getFullString())) {
                 System.out.println("word passed test! word is: " + word.getFullString()
                         + "; row idx " + row + " col idx " + col);
-                hintWords[3-hint] = word.getFullString();
+                hintWords.add(word.getFullString());
                 Toast.makeText(this, "Hint is: " + word.getFullString(), Toast.LENGTH_SHORT).show();
                 return true;
             } else {

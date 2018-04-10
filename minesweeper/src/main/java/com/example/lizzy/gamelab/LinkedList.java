@@ -106,4 +106,23 @@ public class LinkedList {
         }
     }
 
+    /**
+     * A helper method to get the size of the list (ie the current number of linked nodes).
+     * @return The number of nodes in the current list
+     */
+    public int size() {
+        int size = 0;
+        ListNode currNode = start;
+        if (currNode == null) {
+            return size;
+        } else {
+            size++;
+            while (currNode.getNext() != null) {
+                size++;
+                currNode = currNode.getNext();
+            }
+            return size;
+        }
+    }
+
 }
