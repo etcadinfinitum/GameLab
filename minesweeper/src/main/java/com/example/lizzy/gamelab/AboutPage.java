@@ -17,6 +17,7 @@ public class AboutPage extends AppCompatActivity {
         setContentView(R.layout.activity_about_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // enable link "movement" actions when user clicks on HTML-hyperlinked string
         TextView theText = (TextView) findViewById(R.id.about_text);

@@ -109,7 +109,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 theButtons[row][col].setId((1000 * row) + col);
                 theButtons[row][col].setOnClickListener(move);
                 theButtons[row][col].setOnLongClickListener(flag);
-                theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.newcell, null));
+                theButtons[row][col].setBackground(getResources().getDrawable(R.drawable.ms_button_new, null));
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec(row, 1), GridLayout.spec(col, 1));
                 params.width = buttonSizeX;
                 params.height = buttonSizeY;
@@ -221,7 +221,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 public void onClick(View v) {
                     v.setOnClickListener(move);
                     v.setOnLongClickListener(flag);
-                    v.setBackgroundColor(getResources().getColor(R.color.newcell, null));
+                    v.setBackground(getResources().getDrawable(R.drawable.ms_button_new, null));
                     Toast.makeText(getApplicationContext(), "Mine flag removed from selected cell.", Toast.LENGTH_SHORT).show();
                 }
             });

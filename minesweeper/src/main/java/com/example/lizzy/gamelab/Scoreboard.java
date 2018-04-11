@@ -33,6 +33,8 @@ public class Scoreboard extends AppCompatActivity {
         setContentView(R.layout.activity_scoreboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         currentScores = new Scorekeeper(this);
         addMinesweeperScores();
         addTictactoeScores();
@@ -43,7 +45,6 @@ public class Scoreboard extends AppCompatActivity {
      * A helper method to add Minesweeper scores to the scoreboard.
      */
     private void addMinesweeperScores() {
-        String text = "";
         TableLayout msScoreTable = (TableLayout) findViewById(R.id.ms_score_table);
         ArrayList<Score> msScores = currentScores.getGameType(GameName.MINESWEEPER);
         msScoreTable.addView(new TableRow(this),0);
@@ -64,7 +65,6 @@ public class Scoreboard extends AppCompatActivity {
      * A helper method to add Boggle scores to the scoreboard.
      */
     private void addBoggleScores() {
-        String text = "";
         TableLayout bScoreTable = (TableLayout) findViewById(R.id.boggle_score_table);
         ArrayList<Score> bScores = currentScores.getGameType(GameName.BOGGLE);
         bScoreTable.addView(new TableRow(this),0);
@@ -85,7 +85,6 @@ public class Scoreboard extends AppCompatActivity {
      * A helper method to add Tic-Tac-Toe scores to the scoreboard.
      */
     private void addTictactoeScores() {
-        String text = "";
         TableLayout tttScoreTable = (TableLayout) findViewById(R.id.ttt_score_table);
         ArrayList<Score> tttScores = currentScores.getGameType(GameName.TICTACTOE);
         if (tttScores.size() < 1) {
