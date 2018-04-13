@@ -15,14 +15,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="821072d4-cd9d-44fb-af70-194e21c56b79" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/drawable/ms_button_new.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/LinkedListTests.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ListNodeTests.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_blank_cell.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" />
+      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java" />
       <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ExampleUnitTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,55 +59,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ListNodeTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ListNodeTests.java">
+      <file leaf-file-name="Scoreboard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="-285">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#addMinesweeperScores#0;class#Scoreboard#0" expanded="false" />
+                <element signature="method#addBoggleScores#0;class#Scoreboard#0" expanded="false" />
+                <element signature="method#addTictactoeScores#0;class#Scoreboard#0" expanded="false" />
+                <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
+                <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
+                <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Minesweeper_game.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java">
+      <file leaf-file-name="content_boggle__game.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1947">
-              <caret line="318" column="7" lean-forward="true" selection-start-line="318" selection-start-column="7" selection-end-line="318" selection-end-column="7" />
-              <folding>
-                <element signature="method#getStatusBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#getActionBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#getNavigationBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="e#8546#9194#0" expanded="true" />
-                <element signature="e#9193#9194#0" expanded="true" />
-                <element signature="method#update#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#gameOver#0;class#Minesweeper_game#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="206">
+              <caret line="101" column="44" lean-forward="false" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedListTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/LinkedListTests.java">
+      <file leaf-file-name="boggle_selected_cell.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_selected_cell.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="78" column="40" lean-forward="false" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spacer_medium.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/spacer_medium.xml">
+      <file leaf-file-name="boggle_blank_cell.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_blank_cell.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boggle_Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1997">
+              <caret line="217" column="58" lean-forward="false" selection-start-line="217" selection-start-column="58" selection-end-line="217" selection-end-column="58" />
               <folding>
-                <element signature="e#169#192#0" expanded="true" />
+                <element signature="method#onTick#0;class#4101:4948" expanded="false" />
+                <element signature="e#6241#6370#0" expanded="false" />
+                <element signature="method#calculateScore#0;class#Boggle_Game#0" expanded="false" />
+                <element signature="method#calculateWordScore#0;class#Boggle_Game#0" expanded="false" />
+                <element signature="method#gameOver#0;class#Boggle_Game#0" expanded="false" />
+                <element signature="method#getButtonFromScreen#0;class#Boggle_Game#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -124,29 +135,38 @@
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/LinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="738">
+              <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ListNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/ListNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="70" column="1" lean-forward="false" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+            <state relative-caret-position="247">
+              <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
               <folding>
                 <element signature="e#787#788#0" expanded="true" />
                 <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#1744#1745#0" expanded="true" />
+                <element signature="e#1773#1774#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/LinkedList.java">
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1064">
-              <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="288">
+              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -2218,7 +2238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/GameLab/src/main/java/com/example/lizzy/gamelab/GameSquare.java" />
         <option value="$PROJECT_DIR$/GameLab/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" />
         <option value="$PROJECT_DIR$/GameLab/src/main/java/com/example/lizzy/gamelab/MinesweeperModel.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/GameSquare.java" />
@@ -2246,7 +2265,6 @@
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/MinesweeperModel.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Score.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Menu.java" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/ListNode.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_boggle__game.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/words.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -2256,17 +2274,21 @@
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_about_page.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Model.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/LinkedList.java" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ListNodeTests.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/LinkedListTests.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/drawable/ms_button_new.xml" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/ListNode.java" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/drawable/letter_circle.xml" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_blank_cell.xml" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_selected_cell.xml" />
       </list>
     </option>
   </component>
@@ -2291,9 +2313,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2399,66 +2464,24 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.project.structure.last.selected" value="minesweeper" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="device.picker.selection" value="Nexus_API_27" />
+    <property name="device.picker.selection" value="LGH871d393535d" />
     <property name="settings.editor.selected.configurable" value="instant.run" />
     <property name="android.profiler.active" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../word-counting/words_alpha.txt" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1523435433131" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Signal-Android" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1523602793810" />
     <property name="DEBUGGABLE_DEVICE" value="lge-lg_h871-LGH871d393535d" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.lizzy.gamelab" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2926,28 +2949,29 @@
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.51354337" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5627419" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.48258707" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879582" sideWeight="0.49143174" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03427308" sideWeight="0.58970356" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49143174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.49806523" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5627419" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03427308" sideWeight="0.4742765" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3486911" sideWeight="0.43173024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03427308" sideWeight="0.4102964" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3486911" sideWeight="0.43173024" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.43725815" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.48258707" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19071311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.49143174" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.48258707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03427308" sideWeight="0.52572346" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49143174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2997,31 +3021,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_scoreboard.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_tic_tac_toe_model.xml" />
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_tic_tac_toe_game.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_tic_tac_toe_model.xml" />
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_tic_tac_toe_model.xml" />
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_tic_tac_toe_game.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/TicTacToe_square.java">
@@ -3040,73 +3053,73 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_minesweeper_game.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/menu/navigation.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/menu/navigation.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_tic_tac_toe_game.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_tic_tac_toe_game.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1440">
           <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-883">
           <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_minesweeper.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_minesweeper.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_minesweeper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
           <caret line="81" column="46" lean-forward="false" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_minesweeper_game.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_minesweeper_game.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_menu.java">
@@ -3165,14 +3178,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-829">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/minesweeper.iml">
@@ -3192,14 +3205,14 @@
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/words.txt" />
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/WordCollection.java" />
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_boggle__game.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/GameName.java">
@@ -3226,13 +3239,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_about_page.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/ic_launcher_background.xml">
@@ -3289,63 +3302,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="63" column="6" lean-forward="false" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="82" column="27" lean-forward="true" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
           <folding>
-            <element signature="e#2734#2757#0" expanded="true" />
-            <element signature="e#3710#3733#0" expanded="true" />
+            <element signature="e#2734#2757#0" expanded="false" />
+            <element signature="e#3710#3733#0" expanded="false" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/colors.xml">
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ExampleUnitTest.java" />
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="20" />
+          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ExampleUnitTest.java">
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/spacer_medium.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/ListNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="70" column="1" lean-forward="false" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#169#192#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1064">
-          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3359,62 +3345,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/spacer_medium.xml">
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="318" column="7" lean-forward="true" selection-start-line="318" selection-start-column="7" selection-end-line="318" selection-end-column="7" />
           <folding>
-            <element signature="e#169#192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/ms_button_new.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-          <folding>
-            <element signature="method#addMinesweeperScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addBoggleScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addTictactoeScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="59" column="37" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="60" selection-end-column="62" />
-          <folding>
-            <element signature="method#onTick#0;class#4101:5109" expanded="false" />
-            <element signature="e#6402#6531#0" expanded="false" />
-            <element signature="method#update#0;class#Boggle_Game#0" expanded="false" />
-            <element signature="method#calculateScore#0;class#Boggle_Game#0" expanded="false" />
-            <element signature="method#calculateWordScore#0;class#Boggle_Game#0" expanded="false" />
-            <element signature="method#gameOver#0;class#Boggle_Game#0" expanded="false" />
-            <element signature="method#getButtonFromScreen#0;class#Boggle_Game#0" expanded="false" />
+            <element signature="method#getStatusBarHeight#0;class#Minesweeper_game#0" expanded="false" />
+            <element signature="method#getActionBarHeight#0;class#Minesweeper_game#0" expanded="false" />
+            <element signature="method#getNavigationBarHeight#0;class#Minesweeper_game#0" expanded="false" />
+            <element signature="e#8546#9194#0" expanded="false" />
+            <element signature="e#9193#9194#0" expanded="false" />
+            <element signature="method#update#0;class#Minesweeper_game#0" expanded="false" />
+            <element signature="method#gameOver#0;class#Minesweeper_game#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3429,19 +3371,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java">
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1947">
-          <caret line="318" column="7" lean-forward="true" selection-start-line="318" selection-start-column="7" selection-end-line="318" selection-end-column="7" />
+        <state relative-caret-position="-285">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="method#getStatusBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-            <element signature="method#getActionBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-            <element signature="method#getNavigationBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-            <element signature="e#8546#9194#0" expanded="true" />
-            <element signature="e#9193#9194#0" expanded="true" />
-            <element signature="method#update#0;class#Minesweeper_game#0" expanded="false" />
-            <element signature="method#gameOver#0;class#Minesweeper_game#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#addMinesweeperScores#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addBoggleScores#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addTictactoeScores#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/ListNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding>
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#1744#1745#0" expanded="true" />
+            <element signature="e#1773#1774#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_blank_cell.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_boggle__game.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="101" column="44" lean-forward="false" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Boggle_Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1997">
+          <caret line="217" column="58" lean-forward="false" selection-start-line="217" selection-start-column="58" selection-end-line="217" selection-end-column="58" />
+          <folding>
+            <element signature="method#onTick#0;class#4101:4948" expanded="false" />
+            <element signature="e#6241#6370#0" expanded="false" />
+            <element signature="method#calculateScore#0;class#Boggle_Game#0" expanded="false" />
+            <element signature="method#calculateWordScore#0;class#Boggle_Game#0" expanded="false" />
+            <element signature="method#gameOver#0;class#Boggle_Game#0" expanded="false" />
+            <element signature="method#getButtonFromScreen#0;class#Boggle_Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/ms_button_new.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/boggle_selected_cell.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,19 +1,12 @@
 package com.example.lizzy.gamelab;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-
 import static android.graphics.Typeface.BOLD;
 
 /**
@@ -173,4 +166,5 @@ public class Scoreboard extends AppCompatActivity {
         newRow.addView(text);
         return newRow;
     }
+
 }

@@ -99,6 +99,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
             boardButtons[row][col].setText(lettersToAdd.get(idx));
             boardButtons[row][col].setClickable(false);
             boardButtons[row][col].setFocusable(false);
+            boardButtons[row][col].setBackground(getResources().getDrawable(R.drawable.boggle_blank_cell, null));
             lettersToAdd.remove(idx);
             GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec(row, 1), GridLayout.spec(col, 1));
             params.height = (int) Math.floor(metrics.density * 75);
@@ -131,11 +132,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                 if (currentWord != null) {
                     model.makeMove(currentWord);
                 }
-                for (int row = 0; row < 4; row++) {
-                    for (int col = 0; col < 4; col++) {
-                        boardButtons[row][col].setEnabled(false);
-                    }
-                }
+                boardShell.setOnTouchListener(null);
                 gameOver();
 
             }
@@ -179,7 +176,14 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                     if (button != null) {
                         CharSequence text = button.getText();
                         // System.out.println("adding letter from button: " + text);
-                        currentWord.add((text.toString()).toLowerCase(), button);
+                        boolean wasAdded = currentWord.add((text.toString()).toLowerCase(), button);
+                        if (wasAdded) {
+                            // linked list method returned true because button was not already in list;
+                            // set background to selected for this button only
+                            button.setBackground(getResources().getDrawable(R.drawable.boggle_selected_cell, null));
+                        } else {
+                            clearCellSelections();
+                        }
                         // System.out.println("current word is " + currentWord.getFullString());
                     }
                     return true;
@@ -238,6 +242,9 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         }
         currentWord = null;
         currentWord = new LinkedList();
+        if (boardButtons != null) {
+            clearCellSelections();
+        }
     }
 
     /**
@@ -422,6 +429,21 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                 searchBoard(row, col - 1, word) ||
                 searchBoard(row + 1, col, word) ||
                 searchBoard(row - 1, col, word);
+            }
+        }
+    }
+
+    /**
+     * A helper method to reset the buttons background after word is completed, when a word link is broken, etc.
+     */
+    private void clearCellSelections() {
+        for (int i = 0; i < 16; i++) {
+            int row = i / 4;
+            int col = i % 4;
+            if (currentWord == null || currentWord.size() == 0 || currentWord.contains(boardButtons[row][col]) == null) {
+                boardButtons[row][col].setBackground(getResources().getDrawable(R.drawable.boggle_blank_cell, null));
+            } else {
+                boardButtons[row][col].setBackground(getResources().getDrawable(R.drawable.boggle_selected_cell, null));
             }
         }
     }
