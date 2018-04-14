@@ -18,5 +18,6 @@
     <color name="selected">#A2A2A2</color>
     <color name="newcell">#CACACA</color>
     <color name="winmove">#90DE5E</color>
+    <color name="colorAccent4Dark">#A55A32</color>
 
 </resources>

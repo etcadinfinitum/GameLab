@@ -81,6 +81,14 @@ public class Menu extends AppCompatActivity {
                 goToBoggle();
             }
         });
+
+        Button snake = (Button) findViewById(R.id.snek);
+        snake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSnake();
+            }
+        });
     }
 
     private void goToMinesweeperMenu() {
@@ -97,6 +105,12 @@ public class Menu extends AppCompatActivity {
 
     private void goToBoggle() {
         Intent intent = new Intent(this, Boggle_Game.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void goToSnake() {
+        Intent intent = new Intent(this, Snake_Game.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

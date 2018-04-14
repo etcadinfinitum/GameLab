@@ -55,6 +55,6 @@
     <string name="boggle_bad_word">That was not a valid word. Try again.</string>
     <string name="boggle_duplicate_word">You already added that word in this game. Try again.</string>
     <string name="boggle_word_added">Word added.</string>
-    <string name="title_activity_snake_game">snake_game</string>
+    <string name="title_activity_snake_game">Snake</string>
 
 </resources>
