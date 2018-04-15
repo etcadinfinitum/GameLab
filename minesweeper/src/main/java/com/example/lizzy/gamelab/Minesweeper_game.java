@@ -31,7 +31,6 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
     private int lastRowSelected = -1;
     private int lastColSelected = -1;
     private GameName gameType = GameName.MINESWEEPER;
-    private float dpScale;
     private DisplayMetrics metrics;
     private long startTime = 0;
     private long endTime = 0;
@@ -359,7 +358,6 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
             newScoreVal = (int) Math.floor(gameState.getMineQuant() * multiplier * 40 / scoreTime);
             if (scores.checkNewTopScore(gameType, newScoreVal)) {
                 addNewScore = true;
-                System.out.println("New top score registered - instantiating the textbox for winner name");
                 winnerName = new EditText(this);
                 winnerName.setHint(R.string.anon);
             }

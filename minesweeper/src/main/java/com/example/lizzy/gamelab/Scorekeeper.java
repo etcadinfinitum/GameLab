@@ -21,6 +21,7 @@ public class Scorekeeper implements Serializable {
     private ArrayList<Score> minesweeperLocal;
     private ArrayList<Score> tttLocal;
     private ArrayList<Score> boggleLocal;
+    private ArrayList<Score> snakeLocal;
     private Context appReference;
 
     /**
@@ -35,9 +36,6 @@ public class Scorekeeper implements Serializable {
             FileInputStream input = context.openFileInput("scores.ser");
             ObjectInputStream objects = new ObjectInputStream(input);
             scoreLists = (ArrayList<ArrayList>) objects.readObject();
-
-            // system printing for comfort-of-confirmation
-            // System.out.println("File found and retrieved objects! scoreList parent object type is " + scoreLists.getClass());
             for (int i = 0; i < scoreLists.size(); i++) {
                 switch (i) {
                     case 0:
@@ -49,21 +47,25 @@ public class Scorekeeper implements Serializable {
                     case 2:
                         boggleLocal = (ArrayList<Score>) scoreLists.get(i);
                         break;
+                    case 3:
+                        snakeLocal = (ArrayList<Score>) scoreLists.get(i);
+                        break;
                 }
-
             }
 
         } catch (FileNotFoundException e){
             e.printStackTrace();
             System.out.println("FileNotFoundException occurred. Most likely, scores.ser could not be found or is in a different directory.");
             System.out.println("Creating new ArrayList objects to serialize");
-            scoreLists = new ArrayList<>(3);
+            scoreLists = new ArrayList<>(4);
             minesweeperLocal = new ArrayList<>(5);
             tttLocal = new ArrayList<>(5);
             boggleLocal = new ArrayList<>(5);
+            snakeLocal = new ArrayList<>(5);
             scoreLists.add(0, minesweeperLocal);
             scoreLists.add(1, tttLocal);
             scoreLists.add(2, boggleLocal);
+            scoreLists.add(3, snakeLocal);
         } catch (ClassCastException e) {
 
         } catch (Exception e) {
@@ -76,7 +78,7 @@ public class Scorekeeper implements Serializable {
      * A method to validate whether the score of a successfully won game is a top score for the device.
      * @param game The name of the game, passed as a string.
      * @param score The score of the newly won game, to be tested against the top scores in the existing ArrayList.
-     * @return A boolean flag indicating whether the score is a top score
+     * @return A boolean flag indicating whether the score is a top score (true --> new top score!)
      */
     public boolean checkNewTopScore(GameName game, int score) {
         boolean isTopScore = false;
@@ -85,20 +87,16 @@ public class Scorekeeper implements Serializable {
             if (gameType.size() > 0) {
                 for (Score thisScore : gameType) {
                     if (thisScore == null || score >= thisScore.getScore()) {
-                        System.out.println("----> Adding new top score - genuine new top score!");
                         isTopScore = true;
                     }
                 }
                 if (!isTopScore && gameType.size() < 5) {
-                    System.out.println("----> Adding new top score (called in Scorekeeper checkNewScore method) - high score count is less than 5");
                     isTopScore = true;
                 }
             } else {
-                System.out.println("----> Adding new top score (called in Scorekeeper checkNewScore method) - no scores have been added yet");
                 isTopScore = true;
             }
         }
-        // System.out.println("Checking to see if score is new top score: " + isTopScore);
         return isTopScore;
     }
 
@@ -118,6 +116,9 @@ public class Scorekeeper implements Serializable {
                 break;
             case BOGGLE:
                 gameType = boggleLocal;
+                break;
+            case SNEK:
+                gameType = snakeLocal;
                 break;
             default:
                 gameType = null;

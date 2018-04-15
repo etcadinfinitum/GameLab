@@ -64,14 +64,18 @@ public class Queue {
 
     /**
      * A method to remove the last queue item.
+     * @return The view that was just popped off the end of the list.
      */
-    public void pop() {
+    public View pop() {
         if (first == last) {
             first = null;
             last = null;
+            return null;
         } else {
             QueueNode newNext = first.getNext();
+            View oldView = first.getView();
             first = newNext;
+            return oldView;
         }
     }
 

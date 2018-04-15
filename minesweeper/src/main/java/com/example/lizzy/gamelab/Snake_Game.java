@@ -1,17 +1,21 @@
 package com.example.lizzy.gamelab;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.GridLayout;
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
- * A class to manage UI and gameplay inputs for Snake adaption.
+ * A class to manage UI and game play inputs for Snake game implementation.
  */
 public class Snake_Game extends AppCompatActivity {
 
@@ -22,11 +26,14 @@ public class Snake_Game extends AppCompatActivity {
     private int actualCellWidth;
     private int actualCellHeight;
     private Queue snake;
-    private int appleX;
-    private int appleY;
     private int currX;
     private int currY;
     private SnakeDirection direction;
+    private Handler moveHandler;
+    private int appleCount = 0;
+    private int timerDelay = 500;
+    private ArrayList<View> apples = new ArrayList<>(4);
+    private EditText winnerName;
 
     /**
      * The initializer for the activity.
@@ -47,25 +54,43 @@ public class Snake_Game extends AppCompatActivity {
                 gridHeight = snakeGrid.getHeight();
                 measureChildren();
                 gridCells = new View[snakeGrid.getRowCount()][snakeGrid.getColumnCount()];
-                System.out.println("children have been measured. col count is " + snakeGrid.getColumnCount() + "; row count is " +
-                        snakeGrid.getRowCount() + "; cell dimensions are " + actualCellWidth + " by " + actualCellHeight);
                 placeChildren();
                 makeSnake();
                 makeApple();
+                makeApple();
+                makeApple();
+                makeApple();
+                moveSnake.run();
             }
         });
 
-        Timer theTimer = new Timer();
-
-        TimerTask moveSnake = new TimerTask() {
-            @Override
-            public void run() {
-                makeNextMove();
-            }
-        };
-
-        theTimer.schedule(moveSnake, 1000);
+        moveHandler = new Handler();
     }
+
+    /**
+     * A cleanup method to dispose of the runnable thread that is handling the snake's moves.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        moveHandler.removeCallbacks(moveSnake);
+    }
+
+    /**
+     * The runnable object that manages threads and posts new messages to the handler. The
+     *
+     */
+    Runnable moveSnake = new Runnable() {
+        @Override
+        public void run() {
+            boolean goAgain = makeNextMove();
+            if (goAgain) {
+                moveHandler.postDelayed(moveSnake, timerDelay);
+            } else {
+                makeDialog();
+            }
+        }
+    };
 
     /**
      * A helper method to dynamically determine size of the snake's grid and corresponding grid cells.
@@ -102,7 +127,6 @@ public class Snake_Game extends AppCompatActivity {
             params.height = actualCellHeight;
             snakeGrid.addView(gridCells[row][col], params);
         }
-        snakeGrid.requestLayout();
     }
 
     /**
@@ -115,6 +139,10 @@ public class Snake_Game extends AppCompatActivity {
         snake.push(gridCells[2][1]);
         snake.push(gridCells[2][2]);
         snake.push(gridCells[2][3]);
+        gridCells[1][1].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
+        gridCells[2][1].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
+        gridCells[2][2].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
+        gridCells[2][3].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
         currX = 3;
         currY = 2;
         direction = SnakeDirection.RIGHT;
@@ -129,44 +157,132 @@ public class Snake_Game extends AppCompatActivity {
         while (!emptyView) {
             int row = random.nextInt(snakeGrid.getRowCount());
             int col = random.nextInt(snakeGrid.getColumnCount());
-            if (!snake.contains(gridCells[row][col])) {
+            if (!snake.contains(gridCells[row][col]) && !apples.contains(gridCells[row][col])) {
                 emptyView = true;
-                appleX = col;
-                appleY = row;
+                apples.add(gridCells[row][col]);
+                gridCells[row][col].setBackground(getResources().getDrawable(R.drawable.snake_apple, null));
             }
         }
-        gridCells[appleY][appleX].setBackground(null);
     }
 
-    /**
-     * A helper method to execute end-of-game logic.
-     */
-    private void gameOver() {
-
-    }
 
     /**
      * A helper method to make the next move on the board.
      */
-    private void makeNextMove() {
+    private boolean makeNextMove() {
         switch (direction) {
             case UP:    currY--;    break;
             case DOWN:  currY++;    break;
             case LEFT:  currX--;    break;
             case RIGHT: currX++;    break;
         }
-        if (currY < 0 || currY >= snakeGrid.getRowCount() || currX < 0 || currX >= snakeGrid.getColumnCount() ||
+        if (currX < 0 || currX >= snakeGrid.getColumnCount() || currY < 0 || currY >= snakeGrid.getRowCount() ||
                 snake.contains(gridCells[currY][currX])) {
-            gameOver();
-        } else if (currY == appleY && currX == appleX) {
+            return false;
+        } else if (apples.contains(gridCells[currY][currX])) {
             eatApple();
+            return true;
         } else {
             snake.push(gridCells[currY][currX]);
+            gridCells[currY][currX].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
+            View oldTail = snake.pop();
+            oldTail.setBackground(getResources().getDrawable(R.drawable.ms_button_new, null));
+            return true;
         }
     }
 
+    /**
+     * A helper method to lengthen snake and place a new apple. Only called when current new coordinates
+     * of snake overlaps the coordinates of current apple.
+     */
     private void eatApple() {
+        appleCount++;
+        if (appleCount % 5 == 0 && timerDelay > 100) {
+            timerDelay = (int) Math.floor(timerDelay * 0.8);
+        }
+        snake.push(gridCells[currY][currX]);
+        gridCells[currY][currX].setBackground(getResources().getDrawable(R.drawable.snake_snake, null));
+        apples.remove(gridCells[currY][currX]);
+        makeApple();
+    }
 
+    /**
+     * A helper method to specify direction change when the corresponding user button is selected.
+     * @param view The corresponding button that was clicked (@+id/snake_right)
+     */
+    public void setDirectionRight(View view) {
+        direction = SnakeDirection.RIGHT;
+    }
+
+    /**
+     * A helper method to specify direction change when the corresponding user button is selected.
+     * @param view The corresponding button that was clicked (@+id/snake_left)
+     */
+    public void setDirectionLeft(View view) {
+        direction = SnakeDirection.LEFT;
+    }
+
+    /**
+     * A helper method to specify direction change when the corresponding user button is selected.
+     * @param view The corresponding button that was clicked (@+id/snake_down)
+     */
+    public void setDirectionDown(View view) {
+        direction = SnakeDirection.DOWN;
+    }
+
+    /**
+     * A helper method to specify direction change when the corresponding user button is selected.
+     * @param view The corresponding button that was clicked (@+id/snake_up)
+     */
+    public void setDirectionUp(View view) {
+        direction = SnakeDirection.UP;
+    }
+
+    private void makeDialog() {
+        final Scorekeeper scores = new Scorekeeper(this);
+        final boolean addScore = scores.checkNewTopScore(GameName.SNEK, appleCount);
+        winnerName = new EditText(this);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        dialog.setNegativeButton("Back to Menu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (addScore) {
+                    scores.addTopScore(GameName.SNEK, new Score(winnerName.getText().toString(), appleCount, "N/A"));
+                }
+                Intent menuIntent = new Intent(getApplicationContext(), Menu.class);
+                menuIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(menuIntent);
+            }
+        });
+
+        dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent newGameIntent = new Intent(getApplicationContext(), Snake_Game.class);
+                newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newGameIntent);
+            }
+        });
+
+        String appleString;
+        switch (appleCount) {
+            case 1:     appleString = "Your snake ate 1 apple.";    break;
+            default:    appleString = String.format("Your snake ate %d apples.", appleCount);   break;
+        }
+
+        if (addScore) {
+            appleString += " This is a new top score! Enter your name below:";
+            winnerName = new EditText(this);
+            winnerName.setHint(R.string.anon);
+            dialog.setView(winnerName);
+        }
+        dialog.setTitle(R.string.snake_game_over);
+        dialog.setMessage(appleString);
+        dialog.show();
     }
 
 }
+
+

@@ -55,4 +55,13 @@ public class QueueNode {
         }
     }
 
+    /**
+     * A utility method to retrieve the view associated with this node. Called by the game engine
+     * so that the view's background modifications is the engine's responsibility.
+     * @return The view corresponding to this QueueNode
+     */
+    public View getView() {
+        return view;
+    }
+
 }

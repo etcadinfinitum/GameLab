@@ -32,6 +32,7 @@ public class Scoreboard extends AppCompatActivity {
         addMinesweeperScores();
         addTictactoeScores();
         addBoggleScores();
+        addSnakeScores();
     }
 
     /**
@@ -89,6 +90,25 @@ public class Scoreboard extends AppCompatActivity {
             for (int i = 0; i < tttScores.size(); i++) {
                 TableRow newRow = addRow(tttScores.get(i), i);
                 tttScoreTable.addView(newRow);
+            }
+        }
+    }
+
+    /**
+     * A helper method to add Snake scores to the scoreboard.
+     */
+    private void addSnakeScores() {
+        TableLayout snakeScoreTable = (TableLayout) findViewById(R.id.snake_score_table);
+        ArrayList<Score> snakeScores = currentScores.getGameType(GameName.SNEK);
+        if (snakeScores.size() < 1) {
+            TableRow emptyRow = addRowForEmptyTable();
+            snakeScoreTable.addView(emptyRow);
+        } else {
+            TableRow header = addHeaderRow();
+            snakeScoreTable.addView(header);
+            for (int i = 0; i < snakeScores.size(); i++) {
+                TableRow newRow = addRow(snakeScores.get(i), i);
+                snakeScoreTable.addView(newRow);
             }
         }
     }

@@ -40,6 +40,51 @@
                 </TableLayout>
             </LinearLayout>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_activity_boggle__game"
+                    android:padding="@dimen/spacing_medium"
+                    android:textColor="@color/ms7"
+                    android:background="@color/colorAccent3"/>
+                <TableLayout
+                    android:id="@+id/boggle_score_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_medium"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*">
+                </TableLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_activity_snake_game"
+                    android:padding="@dimen/spacing_medium"
+                    android:textColor="@color/ms7"
+                    android:background="@color/colorAccent4"/>
+                <TableLayout
+                    android:id="@+id/snake_score_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_medium"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*">
+                </TableLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,26 +106,6 @@
                 </TableLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_activity_boggle__game"
-                    android:padding="@dimen/spacing_medium"
-                    android:textColor="@color/ms7"
-                    android:background="@color/colorAccent3"/>
-                <TableLayout
-                    android:id="@+id/boggle_score_table"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/spacing_medium"
-                    android:stretchColumns="*"
-                    android:shrinkColumns="*">
-                </TableLayout>
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

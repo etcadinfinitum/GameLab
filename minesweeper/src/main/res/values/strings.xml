@@ -56,5 +56,10 @@
     <string name="boggle_duplicate_word">You already added that word in this game. Try again.</string>
     <string name="boggle_word_added">Word added.</string>
     <string name="title_activity_snake_game">Snake</string>
+    <string name="snake_game_over">Game Over</string>
+    <string name="snake_up">Up</string>
+    <string name="snake_down">Down</string>
+    <string name="snake_left">Left</string>
+    <string name="snake_right">Right</string>
 
 </resources>
