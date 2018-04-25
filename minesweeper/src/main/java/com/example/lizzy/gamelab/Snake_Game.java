@@ -8,6 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.GridLayout;
@@ -34,6 +36,8 @@ public class Snake_Game extends AppCompatActivity {
     private int timerDelay = 500;
     private ArrayList<View> apples = new ArrayList<>(4);
     private EditText winnerName;
+    private GestureDetector detector;
+    private Scorekeeper scores;
 
     /**
      * The initializer for the activity.
@@ -60,6 +64,7 @@ public class Snake_Game extends AppCompatActivity {
                 makeApple();
                 makeApple();
                 makeApple();
+                setUpListeners.run();
                 moveSnake.run();
             }
         });
@@ -77,8 +82,7 @@ public class Snake_Game extends AppCompatActivity {
     }
 
     /**
-     * The runnable object that manages threads and posts new messages to the handler. The
-     *
+     * The runnable object that manages threads and posts new messages to the handler.
      */
     Runnable moveSnake = new Runnable() {
         @Override
@@ -91,6 +95,53 @@ public class Snake_Game extends AppCompatActivity {
             }
         }
     };
+
+    Runnable setUpListeners = new Runnable() {
+        @Override
+        public void run() {
+            GestureDetector.SimpleOnGestureListener gestureListener = new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onDown(MotionEvent event) {
+                    return true;
+                }
+
+                @Override
+                public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+                    if (Math.abs(velocityX) > Math.abs(velocityY)) {
+                        System.out.println("detected x velocity " + velocityX + " y velocity " + velocityY + "; left-right gesture detected");
+                        if (velocityX > 0) {
+                            System.out.println("detected x velocity " + velocityX + "; calling setDirectionRight");
+                            setDirectionRight(snakeGrid);
+                        } else {
+                            System.out.println("detected x velocity " + velocityX + "; calling setDirectionLeft");
+                            setDirectionLeft(snakeGrid);
+                        }
+                    } else {
+                        System.out.println("detected x velocity " + velocityX + " y velocity " + velocityY + "; up-down gesture detected");
+                        if (velocityY > 0) {
+                            System.out.println("detected y velocity " + velocityY + "; calling setDirectionDown");
+                            setDirectionDown(snakeGrid);
+                        } else {
+                            System.out.println("detected y velocity " + velocityY + "; calling setDirectionUp");
+                            setDirectionUp(snakeGrid);
+                        }
+                    }
+                    return true;
+                }
+            };
+
+            detector = new GestureDetector(getApplicationContext(), gestureListener);
+
+            snakeGrid.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return detector.onTouchEvent(event);
+                }
+            });
+        }
+    };
+
+
 
     /**
      * A helper method to dynamically determine size of the snake's grid and corresponding grid cells.
@@ -165,7 +216,6 @@ public class Snake_Game extends AppCompatActivity {
         }
     }
 
-
     /**
      * A helper method to make the next move on the board.
      */
@@ -238,8 +288,11 @@ public class Snake_Game extends AppCompatActivity {
         direction = SnakeDirection.UP;
     }
 
+    /**
+     * A helper method to produce the dialog for a finished game.
+     */
     private void makeDialog() {
-        final Scorekeeper scores = new Scorekeeper(this);
+        scores = new Scorekeeper(this);
         final boolean addScore = scores.checkNewTopScore(GameName.SNEK, appleCount);
         winnerName = new EditText(this);
 
@@ -260,6 +313,9 @@ public class Snake_Game extends AppCompatActivity {
         dialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                if (addScore) {
+                    scores.addTopScore(GameName.SNEK, new Score(winnerName.getText().toString(), appleCount, "N/A"));
+                }
                 Intent newGameIntent = new Intent(getApplicationContext(), Snake_Game.class);
                 newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(newGameIntent);

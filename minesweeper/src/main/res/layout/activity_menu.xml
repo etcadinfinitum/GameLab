@@ -44,6 +44,7 @@
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
                     android:text="Minesweeper"
+                    android:textAllCaps="false"
                     android:background="@color/colorAccent1"/>
 
                 <Button
@@ -52,6 +53,7 @@
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
                     android:text="Tic-Tac-Toe"
+                    android:textAllCaps="false"
                     android:background="@color/colorAccent2"/>
 
             </LinearLayout>
@@ -68,7 +70,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
-                    android:text="Toggle"
+                    android:text="Boggle"
+                    android:textAllCaps="false"
                     android:background="@color/colorAccent3"/>
 
                 <Button
@@ -76,7 +79,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
-                    android:text="Snek"
+                    android:text="Snake"
+                    android:textAllCaps="false"
                     android:background="@color/colorAccent4"/>
 
             </LinearLayout>

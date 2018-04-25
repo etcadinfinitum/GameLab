@@ -149,6 +149,9 @@ public class Scorekeeper implements Serializable {
                 modList.add(0, newScore);
                 isAdded = true;
             }
+            if (isAdded) {
+                System.out.println("score was added to " + game + " list; new score is " + newScore.getScore() + "; winner " + newScore.getWinnerName());
+            }
         } catch (Exception e) {
             System.out.println("Score was not added - unspecified exception. Game type is " + game + "; arrayList is " + modList);
             isAdded = false;
@@ -156,8 +159,8 @@ public class Scorekeeper implements Serializable {
         while (modList.size() > 5) {
             modList.remove(5);
         }
-        serializeLists();
-        return isAdded;
+        boolean written = serializeLists();
+        return isAdded && written;
     }
 
     /**
@@ -172,6 +175,7 @@ public class Scorekeeper implements Serializable {
             objectOutput.writeObject(scoreLists);
             objectOutput.close();
             output.close();
+            System.out.println("score list data is: " + scoreLists.toString());
             scoresWritten = true;
         } catch (FileNotFoundException e) {
             System.out.println("FileNotFoundException occurred. Scores have not been written to .ser " +

@@ -16,15 +16,11 @@
   <component name="ChangeListManager">
     <list default="true" id="821072d4-cd9d-44fb-af70-194e21c56b79" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Queue.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Queue.java" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/QueueNode.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/QueueNode.java" />
       <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" />
       <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scorekeeper.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scorekeeper.java" />
       <change beforePath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java" afterPath="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml" />
+      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml" />
       <change beforePath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml" />
-      <change beforePath="$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,48 +60,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Snake_Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="278" column="39" lean-forward="false" selection-start-line="278" selection-start-column="39" selection-end-line="278" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#measureChildren#0;class#Snake_Game#0" expanded="false" />
-                <element signature="method#placeChildren#0;class#Snake_Game#0" expanded="false" />
-                <element signature="method#makeSnake#0;class#Snake_Game#0" expanded="false" />
-                <element signature="e#7918#7919#0" expanded="true" />
-                <element signature="e#7966#7967#0" expanded="true" />
-                <element signature="e#8207#8208#0" expanded="true" />
-                <element signature="e#8254#8255#0" expanded="true" />
-                <element signature="e#8495#8496#0" expanded="true" />
-                <element signature="e#8542#8543#0" expanded="true" />
-                <element signature="e#8779#8780#0" expanded="true" />
-                <element signature="e#8824#8825#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scorekeeper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scorekeeper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scorekeeper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-492">
-              <caret line="98" column="9" lean-forward="false" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+            <state relative-caret-position="479">
+              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scoreboard.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Score.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="e#1149#1150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scoreboard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+            <state relative-caret-position="215">
+              <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
               <folding>
-                <element signature="method#addMinesweeperScores#0;class#Scoreboard#0" expanded="false" />
-                <element signature="method#addBoggleScores#0;class#Scoreboard#0" expanded="false" />
-                <element signature="method#addTictactoeScores#0;class#Scoreboard#0" expanded="false" />
                 <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
                 <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
                 <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
@@ -114,49 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_scoreboard.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml">
+      <file leaf-file-name="GameName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/GameName.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-865">
-              <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-              <folding>
-                <element signature="e#3264#3299#0" expanded="true" />
-                <element signature="e#3336#3359#0" expanded="true" />
-                <element signature="e#3708#3731#0" expanded="true" />
-                <element signature="e#4237#4279#0" expanded="true" />
-                <element signature="e#4316#4339#0" expanded="true" />
-                <element signature="e#4686#4709#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Minesweeper_game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2160">
-              <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-              <folding>
-                <element signature="method#onCreate#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#getStatusBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#getActionBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#getNavigationBarHeight#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#printScreenInfo#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#makeMove#0;class#Minesweeper_game#0" expanded="false" />
-                <element signature="method#update#0;class#Minesweeper_game#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+            <state relative-caret-position="108">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2232,7 +2176,6 @@
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/TicTacToe_square.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/drawable/spacer_medium.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_minesweeper.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_tic_tac_toe_game.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_minesweeper.xml" />
@@ -2274,9 +2217,10 @@
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/QueueNode.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Queue.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml" />
+        <option value="$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scorekeeper.java" />
         <option value="$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java" />
@@ -2304,6 +2248,54 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2409,54 +2401,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="minesweeper" type="cbb8eebc:String" user="minesweeper" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2467,7 +2411,7 @@
     <property name="settings.editor.selected.configurable" value="instant.run" />
     <property name="android.profiler.active" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Signal-Android" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1523768683496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1524693578547" />
     <property name="DEBUGGABLE_DEVICE" value="lge-lg_h871-LGH871d393535d" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.lizzy.gamelab" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -3020,7 +2964,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5627419" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03427308" sideWeight="0.28938907" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3486911" sideWeight="0.43173024" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3486911" sideWeight="0.43173024" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.43725815" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.48258707" order="9" side_tool="false" content_ui="tabs" />
@@ -3033,7 +2977,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03427308" sideWeight="0.7106109" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49143174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.49143174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3087,119 +3031,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/TicTacToe_model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="116" column="12" lean-forward="true" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dummy.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml" />
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/assets/words.txt" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/minesweeper.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../word-counting/words_alpha.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="53" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="370098" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/words.txt" />
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/WordCollection.java" />
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_boggle__game.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/GameName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="86" lean-forward="false" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_about_page.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/drawable/ic_launcher_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2579">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/test/java/com/example/lizzy/gamelab/ExampleUnitTest.java" />
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/AboutPage.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3258,17 +3097,6 @@
           <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/MinesweeperModel.java">
@@ -3427,19 +3255,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatDelegateImplV9.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AlertDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3459,58 +3278,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="66" column="49" lean-forward="false" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="278" column="39" lean-forward="false" selection-start-line="278" selection-start-column="39" selection-end-line="278" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#measureChildren#0;class#Snake_Game#0" expanded="false" />
-            <element signature="method#placeChildren#0;class#Snake_Game#0" expanded="false" />
-            <element signature="method#makeSnake#0;class#Snake_Game#0" expanded="false" />
-            <element signature="e#7918#7919#0" expanded="true" />
-            <element signature="e#7966#7967#0" expanded="true" />
-            <element signature="e#8207#8208#0" expanded="true" />
-            <element signature="e#8254#8255#0" expanded="true" />
-            <element signature="e#8495#8496#0" expanded="true" />
-            <element signature="e#8542#8543#0" expanded="true" />
-            <element signature="e#8779#8780#0" expanded="true" />
-            <element signature="e#8824#8825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_scoreboard.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-865">
+        <state relative-caret-position="18">
           <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="e#3264#3299#0" expanded="true" />
-            <element signature="e#3336#3359#0" expanded="true" />
-            <element signature="e#3708#3731#0" expanded="true" />
-            <element signature="e#4237#4279#0" expanded="true" />
-            <element signature="e#4316#4339#0" expanded="true" />
-            <element signature="e#4686#4709#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3519,7 +3291,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Minesweeper_game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2160">
+        <state relative-caret-position="18">
           <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
           <folding>
             <element signature="method#onCreate#0;class#Minesweeper_game#0" expanded="false" />
@@ -3533,26 +3305,240 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        <state relative-caret-position="450">
+          <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Snake_Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
-            <element signature="method#addMinesweeperScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addBoggleScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addTictactoeScores#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
-            <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
+            <element signature="e#1781#2352#0" expanded="false" />
+            <element signature="e#2351#2352#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#Snake_Game#0" expanded="false" />
+            <element signature="e#2767#3047#0" expanded="false" />
+            <element signature="e#3046#3047#0" expanded="false" />
+            <element signature="e#3080#5260#0" expanded="false" />
+            <element signature="class#3217:4900" expanded="false" />
+            <element signature="e#3344#3345#0" expanded="false" />
+            <element signature="e#3395#3396#0" expanded="false" />
+            <element signature="e#5259#5260#0" expanded="false" />
+            <element signature="method#measureChildren#0;class#Snake_Game#0" expanded="false" />
+            <element signature="method#placeChildren#0;class#Snake_Game#0" expanded="false" />
+            <element signature="method#makeSnake#0;class#Snake_Game#0" expanded="false" />
+            <element signature="method#makeApple#0;class#Snake_Game#0" expanded="false" />
+            <element signature="method#makeNextMove#0;class#Snake_Game#0" expanded="false" />
+            <element signature="method#eatApple#0;class#Snake_Game#0" expanded="false" />
+            <element signature="e#11607#12131#0" expanded="false" />
+            <element signature="e#12130#12131#0" expanded="false" />
+            <element signature="e#12182#12721#0" expanded="false" />
+            <element signature="e#12720#12721#0" expanded="false" />
+            <element signature="e#13151#13164#0" expanded="false" />
+            <element signature="e#13241#13265#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/activity_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/res/layout/content_snake_game.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding>
+            <element signature="e#1588#1608#0" expanded="false" />
+            <element signature="e#2825#2846#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#1149#1150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/com/android/internal/os/AndroidPrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="e#1328#1329#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/com/android/internal/os/LoggingPrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4392">
+          <caret line="294" column="48" lean-forward="false" selection-start-line="294" selection-start-column="48" selection-end-line="294" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/util/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/app/LoadedApk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="802" column="0" lean-forward="false" selection-start-line="802" selection-start-column="0" selection-end-line="802" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/app/ContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="1942" column="0" lean-forward="false" selection-start-line="1942" selection-start-column="0" selection-end-line="1942" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="779" column="0" lean-forward="false" selection-start-line="779" selection-start-column="0" selection-end-line="779" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/io/UnixFileSystem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/java/lang/ThreadLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding>
+            <element signature="e#7968#7969#0" expanded="false" />
+            <element signature="e#8005#8006#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/content/ContextWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/com/android/internal/policy/PhoneWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="2076" column="0" lean-forward="false" selection-start-line="2076" selection-start-column="0" selection-end-line="2076" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="19346" column="0" lean-forward="false" selection-start-line="19346" selection-start-column="0" selection-end-line="19346" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/view/ViewGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="4028" column="0" lean-forward="false" selection-start-line="4028" selection-start-column="0" selection-end-line="4028" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/GameName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scorekeeper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-492">
-          <caret line="98" column="9" lean-forward="false" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+        <state relative-caret-position="479">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-24/android/view/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="1305" column="0" lean-forward="false" selection-start-line="1305" selection-start-column="0" selection-end-line="1305" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatDelegateImplV9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2610">
+          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding>
+            <element signature="e#6978#6979#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minesweeper/src/main/java/com/example/lizzy/gamelab/Scoreboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
+          <folding>
+            <element signature="method#addRow#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addHeaderRow#0;class#Scoreboard#0" expanded="false" />
+            <element signature="method#addRowForEmptyTable#0;class#Scoreboard#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

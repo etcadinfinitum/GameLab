@@ -27,88 +27,36 @@ public class Scoreboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         currentScores = new Scorekeeper(this);
-        addMinesweeperScores();
-        addTictactoeScores();
-        addBoggleScores();
-        addSnakeScores();
+        addScores(GameName.BOGGLE);
+        addScores(GameName.MINESWEEPER);
+        addScores(GameName.SNEK);
+        addScores(GameName.TICTACTOE);
     }
 
     /**
-     * A helper method to add Minesweeper scores to the scoreboard.
+     * A helper method to set up score table based on the game type argument.
+     * @param gameName The game type to set up a scoreboard for
      */
-    private void addMinesweeperScores() {
-        TableLayout msScoreTable = (TableLayout) findViewById(R.id.ms_score_table);
-        ArrayList<Score> msScores = currentScores.getGameType(GameName.MINESWEEPER);
-        msScoreTable.addView(new TableRow(this),0);
-        if (msScores.size() < 1) {
-            TableRow emptyRow = addRowForEmptyTable();
-            msScoreTable.addView(emptyRow);
-        } else {
-            TableRow header = addHeaderRow();
-            msScoreTable.addView(header);
-            for (int i = 0; i < msScores.size(); i++) {
-                TableRow newRow = addRow(msScores.get(i), i);
-                msScoreTable.addView(newRow);
-            }
+    private void addScores(GameName gameName) {
+        TableLayout scoreTable = null;
+        switch (gameName) {
+            case SNEK: scoreTable = (TableLayout) findViewById(R.id.snake_score_table);     break;
+            case BOGGLE: scoreTable = (TableLayout) findViewById(R.id.boggle_score_table);  break;
+            case TICTACTOE: scoreTable = (TableLayout) findViewById(R.id.ttt_score_table);  break;
+            case MINESWEEPER: scoreTable = (TableLayout) findViewById(R.id.ms_score_table); break;
         }
-    }
-
-    /**
-     * A helper method to add Boggle scores to the scoreboard.
-     */
-    private void addBoggleScores() {
-        TableLayout bScoreTable = (TableLayout) findViewById(R.id.boggle_score_table);
-        ArrayList<Score> bScores = currentScores.getGameType(GameName.BOGGLE);
-        bScoreTable.addView(new TableRow(this),0);
-        if (bScores.size() < 1) {
+        ArrayList<Score> scores = currentScores.getGameType(gameName);
+        scoreTable.addView(new TableRow(this),0);
+        if (scores.size() < 1) {
             TableRow emptyRow = addRowForEmptyTable();
-            bScoreTable.addView(emptyRow);
+            scoreTable.addView(emptyRow);
         } else {
             TableRow header = addHeaderRow();
-            bScoreTable.addView(header);
-            for (int i = 0; i < bScores.size(); i++) {
-                TableRow newRow = addRow(bScores.get(i), i);
-                bScoreTable.addView(newRow);
-            }
-        }
-    }
-
-    /**
-     * A helper method to add Tic-Tac-Toe scores to the scoreboard.
-     */
-    private void addTictactoeScores() {
-        TableLayout tttScoreTable = (TableLayout) findViewById(R.id.ttt_score_table);
-        ArrayList<Score> tttScores = currentScores.getGameType(GameName.TICTACTOE);
-        if (tttScores.size() < 1) {
-            TableRow emptyRow = addRowForEmptyTable();
-            tttScoreTable.addView(emptyRow);
-        } else {
-            TableRow header = addHeaderRow();
-            tttScoreTable.addView(header);
-            for (int i = 0; i < tttScores.size(); i++) {
-                TableRow newRow = addRow(tttScores.get(i), i);
-                tttScoreTable.addView(newRow);
-            }
-        }
-    }
-
-    /**
-     * A helper method to add Snake scores to the scoreboard.
-     */
-    private void addSnakeScores() {
-        TableLayout snakeScoreTable = (TableLayout) findViewById(R.id.snake_score_table);
-        ArrayList<Score> snakeScores = currentScores.getGameType(GameName.SNEK);
-        if (snakeScores.size() < 1) {
-            TableRow emptyRow = addRowForEmptyTable();
-            snakeScoreTable.addView(emptyRow);
-        } else {
-            TableRow header = addHeaderRow();
-            snakeScoreTable.addView(header);
-            for (int i = 0; i < snakeScores.size(); i++) {
-                TableRow newRow = addRow(snakeScores.get(i), i);
-                snakeScoreTable.addView(newRow);
+            scoreTable.addView(header);
+            for (int i = 0; i < scores.size(); i++) {
+                TableRow newRow = addRow(scores.get(i), i);
+                scoreTable.addView(newRow);
             }
         }
     }

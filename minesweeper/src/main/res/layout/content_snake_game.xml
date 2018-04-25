@@ -32,6 +32,15 @@
             >
 
             <Button
+                android:id="@+id/snake_left"
+                android:layout_weight="0.25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ms_button_new"
+                android:text="@string/snake_left"
+                android:textAllCaps="false"
+                android:onClick="setDirectionLeft"/>
+            <Button
                 android:id="@+id/snake_up"
                 android:layout_weight="0.25"
                 android:layout_width="0dp"
@@ -49,15 +58,6 @@
                 android:text="@string/snake_down"
                 android:textAllCaps="false"
                 android:onClick="setDirectionDown"/>
-            <Button
-                android:id="@+id/snake_left"
-                android:layout_weight="0.25"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ms_button_new"
-                android:text="@string/snake_left"
-                android:textAllCaps="false"
-                android:onClick="setDirectionLeft"/>
             <Button
                 android:id="@+id/snake_right"
                 android:layout_weight="0.25"
