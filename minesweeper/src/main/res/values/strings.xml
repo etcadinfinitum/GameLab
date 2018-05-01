@@ -28,7 +28,7 @@
         </a> site.
         \n\n<b>Credits and Acknowledgements:</b>
         \n\nSeveral individuals were instrumental in the development and testing process of this application.
-        <a href="https://github.com/MissElle" target="_blank">@MissElle</a> was kind enough to offer UI feedback.
+        <a href="https://github.com/booellean" target="_blank">@MissElle</a> was kind enough to offer UI feedback.
         <a href="https://github.com/mchorton" target="_blank">@mchorton</a> was kind enough to ooh and ahh when
         requested. The Boggle implementation would not have been possible without an existing "dictionary" of
         English language words; this implementation uses <a href="https://github.com/dwyl/english-words" target="_blank">this repo

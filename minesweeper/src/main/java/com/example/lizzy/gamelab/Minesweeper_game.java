@@ -1,6 +1,7 @@
 package com.example.lizzy.gamelab;
 
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +48,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_minesweeper_game);
         Intent intent = getIntent();
         String level = intent.getStringExtra("Level");
@@ -108,7 +110,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 theButtons[row][col].setId((1000 * row) + col);
                 theButtons[row][col].setOnClickListener(move);
                 theButtons[row][col].setOnLongClickListener(flag);
-                theButtons[row][col].setBackground(getResources().getDrawable(R.drawable.ms_button_new, null));
+                theButtons[row][col].setBackground(getResources().getDrawable(R.drawable.ic_minesweeper_cell, null));
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec(row, 1), GridLayout.spec(col, 1));
                 params.width = buttonSizeX;
                 params.height = buttonSizeY;
@@ -220,12 +222,12 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 public void onClick(View v) {
                     v.setOnClickListener(move);
                     v.setOnLongClickListener(flag);
-                    v.setBackground(getResources().getDrawable(R.drawable.ms_button_new, null));
+                    v.setBackground(getResources().getDrawable(R.drawable.ic_minesweeper_cell, null));
                     Toast.makeText(getApplicationContext(), "Mine flag removed from selected cell.", Toast.LENGTH_SHORT).show();
                 }
             });
             theButtons[row][col].setOnLongClickListener(null);
-            theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.ms8, null));
+            theButtons[row][col].setBackground(getDrawable(R.drawable.ic_minesweeper_flag));
             Toast.makeText(getApplicationContext(), "Cell flagged as a mine!", Toast.LENGTH_SHORT).show();
             return true;
         }
@@ -292,13 +294,13 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                             break;
 
                     }
-                    theButtons[row][col].setText(hintDisplay);
-                    theButtons[row][col].setTextColor(color);
+                    theButtons[row][col].setBackground(getResources().getDrawable(R.drawable.ms_button_cell, null));
                     if (boardState[row][col].getBomb()) {
-                        theButtons[row][col].setText("M");
-                        theButtons[row][col].setTextColor(getResources().getColor(R.color.ms7, null));
+                        theButtons[row][col].setBackground(getResources().getDrawable(R.drawable.bomb_regular_1, null));
+                    } else {
+                        theButtons[row][col].setText(hintDisplay);
+                        theButtons[row][col].setTextColor(color);
                     }
-                    theButtons[row][col].setBackgroundColor(getResources().getColor(R.color.selected, null));
                     theButtons[row][col].setEnabled(false);
                     boardState[row][col].setOldClick();
                 }
@@ -323,7 +325,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         if (gameState.didUserWin())  {
             theButtons[lastRowSelected][lastColSelected].setBackgroundColor(getResources().getColor(R.color.winmove, null));
         } else {
-            theButtons[lastRowSelected][lastColSelected].setBackgroundColor(getResources().getColor(R.color.ms3, null));
+            theButtons[lastRowSelected][lastColSelected].setBackground(getResources().getDrawable(R.drawable.bomb_clicked, null));
         }
 
         // disable all actionlisteners on buttons
@@ -390,9 +392,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
                 Intent newGameIntent = new Intent(getApplicationContext(), Minesweeper_game.class);
                 newGameIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 while (newGameIntent.getExtras() != null) {
-                    System.out.println("Extras are currently " + newGameIntent.getExtras() + "; removing...");
                     newGameIntent.removeExtra("Level");
-                    System.out.println("Extras are currently " + newGameIntent.getExtras() + "; removing...");
                 }
                 newGameIntent.putExtra("Level", gameLevelString);
                 startActivity(newGameIntent);

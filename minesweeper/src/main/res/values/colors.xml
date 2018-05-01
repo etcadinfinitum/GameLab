@@ -15,6 +15,9 @@
     <color name="ms6">#00abff</color>
     <color name="ms7">#000000</color>
     <color name="ms8">#4f4f4f</color>
+    <color name="ms_cell_top">#fdfcfd</color>
+    <color name="ms_cell_center">#b9b9b9</color>
+    <color name="ms_cell_bottom">#757575</color>
     <color name="selected">#A2A2A2</color>
     <color name="newcell">#CACACA</color>
     <color name="winmove">#90DE5E</color>
