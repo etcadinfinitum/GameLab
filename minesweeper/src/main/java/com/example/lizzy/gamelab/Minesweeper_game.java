@@ -325,7 +325,7 @@ public class Minesweeper_game extends AppCompatActivity implements Observer {
         if (gameState.didUserWin())  {
             theButtons[lastRowSelected][lastColSelected].setBackgroundColor(getResources().getColor(R.color.winmove, null));
         } else {
-            theButtons[lastRowSelected][lastColSelected].setBackground(getResources().getDrawable(R.drawable.bomb_clicked, null));
+            theButtons[lastRowSelected][lastColSelected].setBackground(getResources().getDrawable(R.drawable.ic_bomb_clicked, null));
         }
 
         // disable all actionlisteners on buttons
