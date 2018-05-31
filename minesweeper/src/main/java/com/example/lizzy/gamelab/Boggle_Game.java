@@ -159,6 +159,20 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
 
     }
 
+    private boolean validateButtonSequence(Button newButton) {
+        Button lastButton;
+        if (currentWord.getLastNode() == null) {
+            return true;
+        } else {
+            lastButton = currentWord.getLastNode().getButton();
+        }
+        if (Math.abs(newButton.getLeft() - lastButton.getLeft()) > newButton.getWidth() + 10
+                || Math.abs(newButton.getTop() - lastButton.getTop()) > newButton.getHeight() + 10) {
+            return false;
+        }
+        return true;
+    }
+
     public ViewGroup.OnTouchListener boardListener = new ViewGroup.OnTouchListener() {
         /**
          * Custom implementation for how GridLayout object handles user gestures and interaction.
@@ -176,15 +190,18 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                     // System.out.println("---> detected action " + event.getAction() + " (0=down, 2=move), checking to see if button text should be added");
                     Button button = getButtonFromScreen(event.getX(), event.getY());
                     if (button != null) {
-                        CharSequence text = button.getText();
-                        // System.out.println("adding letter from button: " + text);
-                        boolean wasAdded = currentWord.add((text.toString()).toLowerCase(), button);
-                        if (wasAdded) {
-                            // linked list method returned true because button was not already in list;
-                            // set background to selected for this button only
-                            button.setBackground(getResources().getDrawable(R.drawable.boggle_selected_cell, null));
-                        } else {
-                            clearCellSelections();
+                        boolean validSelection = validateButtonSequence(button);
+                        if (validSelection) {
+                            CharSequence text = button.getText();
+                            // System.out.println("adding letter from button: " + text);
+                            boolean wasAdded = currentWord.add((text.toString()).toLowerCase(), button);
+                            if (wasAdded) {
+                                // linked list method returned true because button was not already in list;
+                                // set background to selected for this button only
+                                button.setBackground(getResources().getDrawable(R.drawable.boggle_selected_cell, null));
+                            } else {
+                                clearCellSelections();
+                            }
                         }
                         // System.out.println("current word is " + currentWord.getFullString());
                     }
