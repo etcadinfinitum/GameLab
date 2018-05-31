@@ -107,17 +107,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TableLayout
-                android:id="@+id/boggle_words"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="@dimen/spacing_medium"
-                android:background="@color/newcell"
-                android:stretchColumns="*"
-                android:shrinkColumns="*">
+                android:orientation="horizontal"
+                android:background="@color/newcell">
 
-            </TableLayout>
+                <TableLayout
+                    android:id="@+id/boggle_words"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*">
+
+                </TableLayout>
+
+            </LinearLayout>
 
         </ScrollView>
 
