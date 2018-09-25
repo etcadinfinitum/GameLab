@@ -50,7 +50,6 @@
     <string name="ttt_scores_title">Tic-Tac-Toe Scores</string>
     <string name="title_activity_boggle__game">Boggle</string>
     <string name="boggle_timer">Timer:</string>
-    <string name="boggle_hint_text">3 Hints Remaining</string>
     <string name="boggle_get_hint">Get Hint</string>
     <string name="boggle_bad_word">That was not a valid word. Try again.</string>
     <string name="boggle_duplicate_word">You already added that word in this game. Try again.</string>

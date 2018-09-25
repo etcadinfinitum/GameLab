@@ -31,7 +31,7 @@ public class Scoreboard extends AppCompatActivity {
         addScores(GameName.BOGGLE);
         addScores(GameName.MINESWEEPER);
         addScores(GameName.SNEK);
-        addScores(GameName.TICTACTOE);
+        // addScores(GameName.TICTACTOE);
     }
 
     /**

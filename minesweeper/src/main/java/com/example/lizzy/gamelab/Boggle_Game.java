@@ -48,6 +48,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private boolean activeGame;
     private Button hintButton;
     private ArrayList<String> hintWords;
+    private TextView hintText;
 
     /**
      * The initializer for the activity.
@@ -142,6 +143,9 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         timer.start();
         activeGame = true;
 
+        hintText = (TextView) findViewById(R.id.boggle_hint_text);
+        hintText.setText("3 hints remaining");
+
         hintWords = new ArrayList<String>(4);
 
         hintButton = (Button) findViewById(R.id.boggle_get_hint);
@@ -151,6 +155,14 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                 System.out.println("hint button was clicked. calling findHint()");
                 findHint();
                 hint--;
+                switch (hint) {
+                    case 2: hintText.setText("2 hints remaining");
+                            break;
+                    case 1: hintText.setText("1 hint remaining");
+                            break;
+                    case 0: hintText.setText("No hints remaining");
+                            break;
+                }
                 if (hint == 0) {
                     hintButton.setEnabled(false);
                 }

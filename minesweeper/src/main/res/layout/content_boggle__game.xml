@@ -70,7 +70,6 @@
                     android:id="@+id/boggle_hint_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/boggle_hint_text"
                     android:textAllCaps="false"
                     android:layout_gravity="center"
                     android:gravity="center"
