@@ -440,19 +440,25 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         //
           else {
             word.add(boardButtons[row][col].getText().toString().toLowerCase(), boardButtons[row][col]);
+            /*
             System.out.println("in searchBoard method, current word being inspected is: " + word.getFullString()
                     + "; row idx " + row + " col idx " + col);
+            */
             if (word.getFullString().length() > 2 && model.validateWord(word.getFullString()) && !userWords.contains(word.getFullString())
                     && !hintWords.contains(word.getFullString())) {
+                /*
                 System.out.println("word passed test! word is: " + word.getFullString()
                         + "; row idx " + row + " col idx " + col);
+                */
                 hintWords.add(word.getFullString());
                 Toast.makeText(this, "Hint is: " + word.getFullString(), Toast.LENGTH_SHORT).show();
                 return true;
             } else {
+                /*
                 System.out.println("that word was not found: " + word.getFullString()
                         + "; incrementing indeces");
-                return searchBoard(row + 1, col + 1, word) ||
+                */
+                boolean valid =  searchBoard(row + 1, col + 1, word) ||
                 searchBoard(row - 1, col + 1, word) ||
                 searchBoard(row + 1, col - 1, word) ||
                 searchBoard(row - 1, col - 1, word) ||
@@ -460,8 +466,14 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                 searchBoard(row, col - 1, word) ||
                 searchBoard(row + 1, col, word) ||
                 searchBoard(row - 1, col, word);
+                if (!valid) {
+                    word.breakList(word.contains(boardButtons[row][col]));
+                } else {
+                    return true;
+                }
             }
         }
+        return false;
     }
 
     /**
