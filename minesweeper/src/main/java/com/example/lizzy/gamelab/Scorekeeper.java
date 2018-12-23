@@ -145,6 +145,10 @@ public class Scorekeeper implements Serializable {
                         isAdded = true;
                     }
                 }
+                if (!isAdded) {
+                    modList.add(modList.size(), newScore);
+                    isAdded = true;
+                }
             } else {
                 modList.add(0, newScore);
                 isAdded = true;
@@ -154,6 +158,7 @@ public class Scorekeeper implements Serializable {
             }
         } catch (Exception e) {
             System.out.println("Score was not added - unspecified exception. Game type is " + game + "; arrayList is " + modList);
+            e.printStackTrace();
             isAdded = false;
         }
         while (modList.size() > 5) {
