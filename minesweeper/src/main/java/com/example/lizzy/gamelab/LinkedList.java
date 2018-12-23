@@ -54,8 +54,25 @@ public class LinkedList {
      * @return A boolean value indicating whether the list was successfully broken (true --> broken)
      */
     public boolean breakList(ListNode node) {
-        node.breakLink();
-        return true;
+        return node.breakLink();
+    }
+
+    /**
+     *
+     * @param node
+     * @return
+     */
+    public boolean breakListAtPreviousLink(ListNode node) {
+        ListNode current = start;
+        while (current != null) {
+            if (current.getNext() == node) {
+                current.breakLink();
+                return true;
+            } else {
+                current = current.getNext();
+            }
+        }
+        return false;
     }
 
     /**

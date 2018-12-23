@@ -482,7 +482,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
                 searchBoard(row + 1, col, word) ||
                 searchBoard(row - 1, col, word);
                 if (!valid) {
-                    word.breakList(word.contains(boardButtons[row][col]));
+                    word.breakListAtPreviousLink(word.contains(boardButtons[row][col]));
                 } else {
                     return true;
                 }
