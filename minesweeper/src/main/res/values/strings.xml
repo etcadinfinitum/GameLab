@@ -17,11 +17,9 @@
         as a ratio of the number of mines to the total elapsed time of the game, with a level multiplier
         applied. The multiplier is 1 for easy, 2 for medium, and 3 for hard. An additional multiplier of 4 is applied
         to all scores, and then floor rounding is applied to the resulting score. The 3BV score of the board instance
-        is not calculated. \n\nBoggle is scored according to traditional rules: \n<ul><li>Words with fewer than
-        3 letters do not earn any points.</li>\n<li>3 or 4 letters: 1 point</li>\n<li>5 letters: 2 points</li>\n<li>6
-        letters: 3 points</li>\n<li>7 letters: 5 points</li>\n<li>8+ letters: 11 points</li>\n<li>The "Qu" letter
-        combination counts as two letters.</li>\n<li>Repeated words are not counted towards the score, even if
-        they are composed from a different distinct combination of tiles.</li></ul>\n\n
+        is not calculated. \n\nBoggle is scored according to traditional rules:
+    </string>
+    <string name="about_text_2">\n\n
         <b>About the Author</b>\n\nThis project was intended as a proof-of-concept in Android development for
         a lowly Computer Science undergrad. Find out more about their work on their <a href="https://etcadinfinitum.github.io/">
             GitHub Pages
@@ -35,6 +33,14 @@
         </a> and credit goes to <a href="https://dwyl.com/">DWYL</a> for making the dictionary publicly
         available. Cheers!
     </string>
+    <string name="about_bullet_1">Words with fewer than 3 letters do not earn any points.</string>
+    <string name="about_bullet_2">3 or 4 letters: 1 point</string>
+    <string name="about_bullet_3">5 letters: 2 points</string>
+    <string name="about_bullet_4">6 letters: 3 points</string>
+    <string name="about_bullet_5">7 letters: 5 points</string>
+    <string name="about_bullet_6">8+ letters: 11 points</string>
+    <string name="about_bullet_7">The "Qu" letter combination counts as two letters.</string>
+    <string name="about_bullet_8">Repeated words are not counted towards the score, even if they are composed from a different distinct combination of tiles.</string>
     <string name="title_activity_about_page">About Page</string>
     <string name="title_activity_main">Scoreboard</string>
     <string name="title_activity_scoreboard">Scoreboard</string>
@@ -60,5 +66,6 @@
     <string name="snake_down">Down</string>
     <string name="snake_left">Left</string>
     <string name="snake_right">Right</string>
+    <string name="splash_text">Infinitum Industries</string>
 
 </resources>

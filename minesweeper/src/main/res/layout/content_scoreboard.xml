@@ -26,6 +26,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="@string/title_activity_minesweeper"
                     android:padding="@dimen/spacing_medium"
                     android:textColor="@color/ms7"
@@ -48,6 +49,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="@string/title_activity_boggle__game"
                     android:padding="@dimen/spacing_medium"
                     android:textColor="@color/ms7"
@@ -71,6 +73,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="@string/title_activity_snake_game"
                     android:padding="@dimen/spacing_medium"
                     android:textColor="@color/ms7"
@@ -92,6 +95,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="@string/title_activity_tic_tac_toe_model"
                     android:padding="@dimen/spacing_medium"
                     android:textColor="@color/ms7"

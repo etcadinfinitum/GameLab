@@ -12,12 +12,151 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/spacing_medium">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
             android:id="@+id/about_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="16dp"
             android:text="@string/about_text" />
 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="0">
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="    &#8226;    "
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:text="@string/about_bullet_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    />
+                <TextView />
+            </TableRow>
+        </TableLayout>
+        <TextView
+            android:id="@+id/about_text_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:text="@string/about_text_2" />
+
+        </LinearLayout>
     </ScrollView>
 
 

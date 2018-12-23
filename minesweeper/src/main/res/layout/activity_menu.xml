@@ -43,6 +43,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
+                    android:textSize="20dp"
                     android:text="Minesweeper"
                     android:textAllCaps="false"
                     android:background="@color/colorAccent1"/>
@@ -52,6 +53,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
+                    android:textSize="20dp"
                     android:text="Tic-Tac-Toe"
                     android:textAllCaps="false"
                     android:background="@color/colorAccent2"/>
@@ -70,6 +72,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
+                    android:textSize="20dp"
                     android:text="Boggle"
                     android:textAllCaps="false"
                     android:background="@color/colorAccent3"/>
@@ -79,6 +82,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
+                    android:textSize="20dp"
                     android:text="Snake"
                     android:textAllCaps="false"
                     android:background="@color/colorAccent4"/>
