@@ -49,6 +49,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
     private Button hintButton;
     private ArrayList<String> hintWords;
     private TextView hintText;
+    private CountDownTimer timer;
 
     /**
      * The initializer for the activity.
@@ -116,7 +117,7 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
         timerText = (TextView) findViewById(R.id.boggle_timer_time);
         timerText.setText("01:01");
 
-        CountDownTimer timer = new CountDownTimer(61000, 1000) {
+        timer = new CountDownTimer(61000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 int seconds = (int) Math.round(millisUntilFinished / 1000);
@@ -169,6 +170,20 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
             }
         });
 
+    }
+
+    /**
+     * The cleanup method for the activity.
+     * Important because some resources should be cleaned up (specifically the CountdownTimer object).
+     */
+    @Override
+    protected void onDestroy() {
+        System.out.println("Calling the onDestroy() method for the Boggle_Game activity");
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
     }
 
     private boolean validateButtonSequence(Button newButton) {
