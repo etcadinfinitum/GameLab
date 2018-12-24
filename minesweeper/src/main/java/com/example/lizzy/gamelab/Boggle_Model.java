@@ -19,6 +19,7 @@ public class Boggle_Model extends Observable {
 
     private String[] thisBoard = new String[16];
     private HashSet<String> dictionary;
+    private GameLabApplication appContext;
 
     /**
      * --------------- SETTING UP THE BOARD ---------------
@@ -32,7 +33,10 @@ public class Boggle_Model extends Observable {
         super();
         addObserver(game);
         generateDice();
-        getDictionary((Context) game);
+        // getDictionary((Context) game);
+        // get dictionary from application class GameLabApplication
+        appContext = GameLabApplication.getInstance();
+        dictionary = appContext.getDictionary();
 
         setChanged();
         notifyObservers();
@@ -88,10 +92,10 @@ public class Boggle_Model extends Observable {
 
     }
 
-
     /**
      * A helper method which retrieves the HashSet dictionary and loads into memory.
      */
+    /*
     private void getDictionary(Context appContext) {
         try {
             // AssetManager getDictionaryAsset = new AssetManager("dictionary.ser");
@@ -108,6 +112,7 @@ public class Boggle_Model extends Observable {
         }
 
     }
+    */
 
     /**
      * --------------- VALIDATING DURING GAMEPLAY ---------------
