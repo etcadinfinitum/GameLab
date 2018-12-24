@@ -17,16 +17,6 @@ public class SplashScreen extends AppCompatActivity {
         GameLabApplication application = GameLabApplication.getInstance();
         application.setDictionary();
 
-        /*
-        // in the interim, do time.sleep() equivalent (testing only)
-        try {
-            System.out.println("Launching app in 3 seconds");
-            TimeUnit.SECONDS.sleep(3);
-            System.out.println("3 second timeout finished");
-        } catch (InterruptedException e) {
-
-        }
-        */
 
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
