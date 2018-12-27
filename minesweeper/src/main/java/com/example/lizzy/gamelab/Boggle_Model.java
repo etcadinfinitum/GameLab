@@ -19,6 +19,7 @@ public class Boggle_Model extends Observable {
 
     private String[] thisBoard = new String[16];
     private HashSet<String> dictionary;
+    private GameLabApplication appContext;
 
     /**
      * --------------- SETTING UP THE BOARD ---------------
@@ -32,7 +33,10 @@ public class Boggle_Model extends Observable {
         super();
         addObserver(game);
         generateDice();
-        getDictionary((Context) game);
+        // getDictionary((Context) game);
+        // get dictionary from application class GameLabApplication
+        appContext = GameLabApplication.getInstance();
+        dictionary = appContext.getDictionary();
 
         setChanged();
         notifyObservers();
@@ -88,26 +92,6 @@ public class Boggle_Model extends Observable {
 
     }
 
-
-    /**
-     * A helper method which retrieves the HashSet dictionary and loads into memory.
-     */
-    private void getDictionary(Context appContext) {
-        try {
-            // AssetManager getDictionaryAsset = new AssetManager("dictionary.ser");
-            ObjectInputStream stream = new ObjectInputStream(appContext.getAssets().open("dictionary.ser"));
-            dictionary = (HashSet<String>) stream.readObject();
-        } catch (FileNotFoundException e) {
-            System.out.println("---------> building dictionary from scratch (no .ser file) <---------");
-        } catch (IOException e) {
-            System.out.println("---------> an ioException occurred <---------");
-            e.printStackTrace();
-        } catch (Exception e) {
-            System.out.println("---------> an unspecified error occurred <---------");
-            e.printStackTrace();
-        }
-
-    }
 
     /**
      * --------------- VALIDATING DURING GAMEPLAY ---------------

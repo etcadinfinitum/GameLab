@@ -20,6 +20,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Observer;
 import java.util.Observable;
 import java.util.Random;
