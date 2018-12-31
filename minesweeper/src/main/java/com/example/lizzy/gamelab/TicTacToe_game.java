@@ -206,7 +206,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         } else {
             Xturn = !Xturn;
         }
-        if (!Xturn) {
+        if (model.isGameStillGoing() && !Xturn) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             cpuMoveHandler.postDelayed(cpuMove, 750);
         }
@@ -218,7 +218,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
      */
     private void makeCPUMove() {
         // inquire with model to see if a winning move is available; if so, use the returned Point object to specify row and column for move
-        System.out.println("Looking for winning move for CPU in ttt");
+        // System.out.println("Looking for winning move for CPU in ttt");
         Point winner = model.findNextCPUMove(false);
         if (winner != null) {
             lastRowSelected = winner.x;
@@ -229,7 +229,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         }
 
         // if a winning move was not found, a blocking move should be searched for next
-        System.out.println("Looking for blocking move for CPU in ttt");
+        // System.out.println("Looking for blocking move for CPU in ttt");
         winner = model.findNextCPUMove(true);
         if (winner != null) {
             lastRowSelected = winner.x;
@@ -252,8 +252,8 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         }
         Random shuffle = new Random();
         int nextMove = shuffle.nextInt(availableMoves.size());
-        System.out.println("created available moves list: " + availableMoves.toString());
-        System.out.println("picked item with idx " + nextMove + "; x/y are " + availableMoves.get(nextMove).x + ", " + availableMoves.get(nextMove).y);
+        // System.out.println("created available moves list: " + availableMoves.toString());
+        // System.out.println("picked item with idx " + nextMove + "; x/y are " + availableMoves.get(nextMove).x + ", " + availableMoves.get(nextMove).y);
         lastRowSelected = availableMoves.get(nextMove).x;
         lastColSelected = availableMoves.get(nextMove).y;
 
