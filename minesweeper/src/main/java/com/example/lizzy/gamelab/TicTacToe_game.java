@@ -217,6 +217,29 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
      *
      */
     private void makeCPUMove() {
+        // inquire with model to see if a winning move is available; if so, use the returned Point object to specify row and column for move
+        System.out.println("Looking for winning move for CPU in ttt");
+        Point winner = model.findNextCPUMove(false);
+        if (winner != null) {
+            lastRowSelected = winner.x;
+            lastColSelected = winner.y;
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            model.move(lastRowSelected, lastColSelected, Xturn);
+            return;
+        }
+
+        // if a winning move was not found, a blocking move should be searched for next
+        System.out.println("Looking for blocking move for CPU in ttt");
+        winner = model.findNextCPUMove(true);
+        if (winner != null) {
+            lastRowSelected = winner.x;
+            lastColSelected = winner.y;
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            model.move(lastRowSelected, lastColSelected, Xturn);
+            return;
+        }
+
+        // if both of the prior searches failed, a random move should be found
         ArrayList<Point> availableMoves = new ArrayList<>(12);
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
@@ -236,6 +259,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
 
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         model.move(lastRowSelected, lastColSelected, Xturn);
+        return;
     }
 
     /**
