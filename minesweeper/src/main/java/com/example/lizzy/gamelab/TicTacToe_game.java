@@ -41,6 +41,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         setContentView(R.layout.activity_tic_tac_toe_game);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         model = new TicTacToe_model(this);
 
@@ -114,6 +115,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         }
         return result;
     }
+
     /**
      * A helper method to get the height of the application's action bar.
      * @return The height of the action bar in pixels

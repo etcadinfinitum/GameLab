@@ -21,6 +21,7 @@ public class Minesweeper_menu extends AppCompatActivity {
         setContentView(R.layout.activity_minesweeper);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         dpScale = getResources().getDisplayMetrics().density;
 

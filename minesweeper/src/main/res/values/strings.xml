@@ -11,7 +11,7 @@
     <string name="level_hard">Hard</string>
     <string name="level_picker">Pick your preferred level for this game:</string>
     <string name="new_game">Start The Game</string>
-    <string name="title_activity_minesweeper_game">Minesweeper_game</string>
+    <string name="title_activity_minesweeper_game">Minesweeper</string>
     <string name="about_text"><b>Thanks for stopping by!</b> This application was created by Infinitum Industries.
         Copyright 2018. \n\n<b>Scoring Methodologies:</b> \n\nFor Minesweeper, the score of the player is determined
         as a ratio of the number of mines to the total elapsed time of the game, with a level multiplier
