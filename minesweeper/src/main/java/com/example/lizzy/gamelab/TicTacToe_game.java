@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
 import android.graphics.Point;
@@ -76,7 +78,8 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
     }
 
     /**
-     * Make a runnable object for the
+     * Make a runnable object for the CPU moves.
+     * This ensures the UI gets updated while the task is being executed.
      */
     Runnable cpuMove = new Runnable() {
         @Override
@@ -204,6 +207,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
             Xturn = !Xturn;
         }
         if (!Xturn) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             cpuMoveHandler.postDelayed(cpuMove, 750);
         }
     }
@@ -229,6 +233,8 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         System.out.println("picked item with idx " + nextMove + "; x/y are " + availableMoves.get(nextMove).x + ", " + availableMoves.get(nextMove).y);
         lastRowSelected = availableMoves.get(nextMove).x;
         lastColSelected = availableMoves.get(nextMove).y;
+
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         model.move(lastRowSelected, lastColSelected, Xturn);
     }
 
