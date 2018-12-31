@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,9 +14,12 @@ import android.widget.Button;
 import android.view.View;
 import android.graphics.Point;
 import android.widget.LinearLayout;
+import java.util.ArrayList;
 import java.util.Observer;
 import java.util.Observable;
 import java.lang.Math;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * View/controller class for the tic-tac-toe game. Acts as an Observer to the corresponding model class.
@@ -29,6 +33,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
     private int lastColSelected = -1;
     Button[][] theButtons;
     private boolean Xturn;
+    private Handler cpuMoveHandler;
 
     /**
      * Initializer for the tic-tac-toe board.
@@ -49,7 +54,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
 
         metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        printScreenInfo();
+        // printScreenInfo();
         int screenWidth = metrics.widthPixels;
         int screenHeight = metrics.heightPixels;
         screenHeight = (screenHeight - getActionBarHeight() - getStatusBarHeight() - getNavigationBarHeight());
@@ -67,7 +72,18 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
             }
         }
         Xturn = true;
+        cpuMoveHandler = new Handler();
     }
+
+    /**
+     * Make a runnable object for the
+     */
+    Runnable cpuMove = new Runnable() {
+        @Override
+        public void run() {
+            makeCPUMove();
+        }
+    };
 
     /**
      * Create a click listener for the buttons.
@@ -130,7 +146,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
                 value = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
             }
         }
-        System.out.println("action bar height is: " + value);
+        // System.out.println("action bar height is: " + value);
         return value;
     }
 
@@ -187,6 +203,33 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         } else {
             Xturn = !Xturn;
         }
+        if (!Xturn) {
+            cpuMoveHandler.postDelayed(cpuMove, 750);
+        }
+    }
+
+
+    /**
+     *
+     */
+    private void makeCPUMove() {
+        ArrayList<Point> availableMoves = new ArrayList<>(12);
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                int thisButtonID = getResources().getIdentifier("b" + Integer.toString(row) + Integer.toString(col), "id", getPackageName());
+                Button thisButton = (Button) findViewById(thisButtonID);
+                if (thisButton.isEnabled()) {
+                    availableMoves.add(new Point(row, col));
+                }
+            }
+        }
+        Random shuffle = new Random();
+        int nextMove = shuffle.nextInt(availableMoves.size());
+        System.out.println("created available moves list: " + availableMoves.toString());
+        System.out.println("picked item with idx " + nextMove + "; x/y are " + availableMoves.get(nextMove).x + ", " + availableMoves.get(nextMove).y);
+        lastRowSelected = availableMoves.get(nextMove).x;
+        lastColSelected = availableMoves.get(nextMove).y;
+        model.move(lastRowSelected, lastColSelected, Xturn);
     }
 
     /**
