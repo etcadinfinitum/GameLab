@@ -56,6 +56,110 @@ public class TicTacToe_model extends Observable {
     }
 
     /**
+     * A utility method for the CPU turn to use to determine whether a winning move exists on the board
+     * @return the Point object that represents
+     */
+    public Point findNextCPUMove(boolean block) {
+        // System.out.println("calling findNextCPUMove with block boolean as: " + block);
+        Point winner = null;
+        // columns first
+        for (int col = 0; col < 3; col++) {
+            int oCount = 0;
+            int emptyRow = -1;
+            int emptyCol = -1;
+            if (board[0][col].isClicked() && board[1][col].isClicked() && board[2][col].isClicked()) {
+                // System.out.println("All squares for column# " + col + " are occupied; continuing");
+                continue;
+            } else {
+                for (int row = 0; row < 3; row++) {
+                    if (!board[row][col].isClicked()) {
+                        emptyRow = row;
+                        emptyCol = col;
+                    } else {
+                        if (!block && board[row][col].whichTeam().equals("O")) {
+                            oCount++;
+                        } else if (block && board[row][col].whichTeam().equals("X")) {
+                            oCount++;
+                        }
+                    }
+                }
+                // System.out.println("Searching columns for valid move. Col value is " + col + "; emptyRow, emptyCol, and oCount are all " + emptyRow + ", " + emptyCol + ", " + oCount );
+                if (oCount == 2 && emptyRow != -1 && emptyCol != -1) {
+                    winner = new Point(emptyRow, emptyCol);
+                    return winner;
+                }
+            }
+        }
+        // then rows
+        for (int row = 0; row < 3; row++) {
+            int oCount = 0;
+            int emptyRow = -1;
+            int emptyCol = -1;
+            if (board[row][0].isClicked() && board[row][1].isClicked() && board[row][2].isClicked()) {
+                // System.out.println("All squares for row# " + row + " are occupied; continuing");
+                continue;
+            } else {
+                for (int col = 0; col < 3; col++) {
+                    if (!board[row][col].isClicked()) {
+                        emptyRow = row;
+                        emptyCol = col;
+                    } else {
+                        if (!block && board[row][col].whichTeam().equals("O")) {
+                            oCount++;
+                        } else if (block && board[row][col].whichTeam().equals("X")) {
+                            oCount++;
+                        }
+                    }
+                }
+                // System.out.println("Searching columns for valid move. row value is " + row + "; emptyRow, emptyCol, and oCount are all " + emptyRow + ", " + emptyCol + ", " + oCount );
+                if (oCount == 2 && emptyRow != -1 && emptyCol != -1) {
+                    winner = new Point(emptyRow, emptyCol);
+                    return winner;
+                }
+            }
+        }
+        // then diagonals
+        int oCount = 0;
+        int emptyRow = -1;
+        int emptyCol = -1;
+        // first diagonal
+        for (int idx = 0; idx < 3; idx++) {
+            if (!board[idx][idx].isClicked()) {
+                emptyRow = idx;
+                emptyCol = idx;
+            } else {
+                if (!block && board[idx][idx].whichTeam().equals("O")) {
+                    oCount++;
+                } else if (block && board[idx][idx].whichTeam().equals("X")) {
+                    oCount++;
+                }
+            }
+        }
+        if (oCount == 2 && emptyCol != -1 && emptyRow != -1) {
+            winner = new Point(emptyRow, emptyCol);
+            return winner;
+        }
+        // next diagonal
+        for (int idx = 0; idx < 3; idx++) {
+            if (!board[idx][idx].isClicked()) {
+                emptyRow = idx;
+                emptyCol = idx;
+            } else {
+                if (!block && board[idx][2 - idx].whichTeam().equals("O")) {
+                    oCount++;
+                } else if (block && board[idx][2 - idx].whichTeam().equals("X")) {
+                    oCount++;
+                }
+            }
+        }
+        if (oCount == 2 && emptyCol != -1 && emptyRow != -1) {
+            winner = new Point(emptyRow, emptyCol);
+            return winner;
+        }
+        return winner;
+    }
+
+    /**
      * A helper method which determines whether the game is over or still ongoing.
      */
     private void checkGameStatus() {

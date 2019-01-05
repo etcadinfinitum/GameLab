@@ -4,18 +4,24 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
 import android.graphics.Point;
 import android.widget.LinearLayout;
+import java.util.ArrayList;
 import java.util.Observer;
 import java.util.Observable;
 import java.lang.Math;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * View/controller class for the tic-tac-toe game. Acts as an Observer to the corresponding model class.
@@ -29,6 +35,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
     private int lastColSelected = -1;
     Button[][] theButtons;
     private boolean Xturn;
+    private Handler cpuMoveHandler;
 
     /**
      * Initializer for the tic-tac-toe board.
@@ -49,7 +56,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
 
         metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        printScreenInfo();
+        // printScreenInfo();
         int screenWidth = metrics.widthPixels;
         int screenHeight = metrics.heightPixels;
         screenHeight = (screenHeight - getActionBarHeight() - getStatusBarHeight() - getNavigationBarHeight());
@@ -67,7 +74,19 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
             }
         }
         Xturn = true;
+        cpuMoveHandler = new Handler();
     }
+
+    /**
+     * Make a runnable object for the CPU moves.
+     * This ensures the UI gets updated while the task is being executed.
+     */
+    Runnable cpuMove = new Runnable() {
+        @Override
+        public void run() {
+            makeCPUMove();
+        }
+    };
 
     /**
      * Create a click listener for the buttons.
@@ -130,7 +149,7 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
                 value = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
             }
         }
-        System.out.println("action bar height is: " + value);
+        // System.out.println("action bar height is: " + value);
         return value;
     }
 
@@ -187,6 +206,60 @@ public class TicTacToe_game extends AppCompatActivity implements Observer {
         } else {
             Xturn = !Xturn;
         }
+        if (model.isGameStillGoing() && !Xturn) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            cpuMoveHandler.postDelayed(cpuMove, 750);
+        }
+    }
+
+
+    /**
+     *
+     */
+    private void makeCPUMove() {
+        // inquire with model to see if a winning move is available; if so, use the returned Point object to specify row and column for move
+        // System.out.println("Looking for winning move for CPU in ttt");
+        Point winner = model.findNextCPUMove(false);
+        if (winner != null) {
+            lastRowSelected = winner.x;
+            lastColSelected = winner.y;
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            model.move(lastRowSelected, lastColSelected, Xturn);
+            return;
+        }
+
+        // if a winning move was not found, a blocking move should be searched for next
+        // System.out.println("Looking for blocking move for CPU in ttt");
+        winner = model.findNextCPUMove(true);
+        if (winner != null) {
+            lastRowSelected = winner.x;
+            lastColSelected = winner.y;
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            model.move(lastRowSelected, lastColSelected, Xturn);
+            return;
+        }
+
+        // if both of the prior searches failed, a random move should be found
+        ArrayList<Point> availableMoves = new ArrayList<>(12);
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                int thisButtonID = getResources().getIdentifier("b" + Integer.toString(row) + Integer.toString(col), "id", getPackageName());
+                Button thisButton = (Button) findViewById(thisButtonID);
+                if (thisButton.isEnabled()) {
+                    availableMoves.add(new Point(row, col));
+                }
+            }
+        }
+        Random shuffle = new Random();
+        int nextMove = shuffle.nextInt(availableMoves.size());
+        // System.out.println("created available moves list: " + availableMoves.toString());
+        // System.out.println("picked item with idx " + nextMove + "; x/y are " + availableMoves.get(nextMove).x + ", " + availableMoves.get(nextMove).y);
+        lastRowSelected = availableMoves.get(nextMove).x;
+        lastColSelected = availableMoves.get(nextMove).y;
+
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        model.move(lastRowSelected, lastColSelected, Xturn);
+        return;
     }
 
     /**
