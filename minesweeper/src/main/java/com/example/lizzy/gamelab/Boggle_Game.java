@@ -20,6 +20,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Observer;
 import java.util.Observable;
@@ -423,13 +424,11 @@ public class Boggle_Game extends AppCompatActivity implements Observer {
      */
     private void findHint() {
         boolean wordFound = false;
-        for (int i = 0; i < 16; i++) {
-            int row = i / 4;
-            int col = i % 4;
-            wordFound = searchBoard(row, col, new LinkedList());
-            if (wordFound) {
-                break;
-            }
+        Random picker = new Random();
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15));
+        while (!wordFound && !nums.isEmpty()) {
+            int idx = nums.remove(picker.nextInt(nums.size()));
+            wordFound = searchBoard(idx / 4, idx % 4, new LinkedList());
         }
     }
 
