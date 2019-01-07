@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lizzy.gamelab"
+    package="experiment.gamelab"
     android:versionCode="1"
     android:versionName="1.1">
 
     <application
-        android:name=".GameLabApplication"
+        android:name="experiment.gamelab.GameLabApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name="experiment.gamelab.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,64 +22,64 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menu"
+            android:name="experiment.gamelab.Menu"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".Minesweeper_menu"
+            android:name="experiment.gamelab.Minesweeper_menu"
             android:label="@string/title_activity_minesweeper"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Menu" />
+                android:value="experiment.gamelab.Menu" />
         </activity>
         <activity
-            android:name=".Minesweeper_game"
+            android:name="experiment.gamelab.Minesweeper_game"
             android:label="@string/title_activity_minesweeper_game"
-            android:parentActivityName=".Minesweeper_menu"
+            android:parentActivityName="experiment.gamelab.Minesweeper_menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Minesweeper_menu" />
+                android:value="experiment.gamelab.Minesweeper_menu" />
         </activity>
         <activity
-            android:name=".AboutPage"
+            android:name="experiment.gamelab.AboutPage"
             android:label="@string/title_activity_about_page"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Scoreboard"
+            android:name="experiment.gamelab.Scoreboard"
             android:label="@string/title_activity_scoreboard"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Menu" />
+                android:value="experiment.gamelab.Menu" />
         </activity>
         <activity
-            android:name=".TicTacToe_game"
+            android:name="experiment.gamelab.TicTacToe_game"
             android:label="@string/title_activity_tic_tac_toe_menu"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Boggle_Game"
+            android:name="experiment.gamelab.Boggle_Game"
             android:label="@string/title_activity_boggle__game"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Menu" />
+                android:value="experiment.gamelab.Menu" />
         </activity>
         <activity
-            android:name=".Snake_Game"
+            android:name="experiment.gamelab.Snake_Game"
             android:label="@string/title_activity_snake_game"
-            android:parentActivityName=".Menu"
+            android:parentActivityName="experiment.gamelab.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.lizzy.gamelab.Menu" />
+                android:value="experiment.gamelab.Menu" />
         </activity>
     </application>
 

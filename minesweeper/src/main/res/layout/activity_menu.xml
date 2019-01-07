@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lizzy.gamelab.Menu">
+    tools:context="experiment.gamelab.Menu">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.lizzy.gamelab.Minesweeper_menu"
+    tools:context="experiment.gamelab.Minesweeper_menu"
     tools:showIn="@layout/activity_minesweeper">
 
     <RelativeLayout

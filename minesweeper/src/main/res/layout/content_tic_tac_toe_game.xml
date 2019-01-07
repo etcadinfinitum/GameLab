@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.lizzy.gamelab.TicTacToe_game"
+    tools:context="experiment.gamelab.TicTacToe_game"
     tools:showIn="@layout/activity_tic_tac_toe_game">
 
     <LinearLayout

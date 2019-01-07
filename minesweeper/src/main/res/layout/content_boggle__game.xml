@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Boggle_Game"
+    tools:context="experiment.gamelab.Boggle_Game"
     tools:showIn="@layout/activity_boggle__game"
     android:background="@color/colorAccent3">
 
