@@ -29,9 +29,11 @@
         <a href="https://github.com/Yas-Elak" target="_blank">@Yas-Elak</a> provided unsolicited help (the best kind of help).
         <a href="https://github.com/booellean" target="_blank">@MissElle</a> offered valuable UI feedback and general encouragement.
         The Boggle implementation would not have been possible without an existing "dictionary" of
-        English language words; this implementation uses <a href="https://github.com/dwyl/english-words" target="_blank">this repo
-        </a> and credit goes to <a href="https://dwyl.com/">DWYL</a> for making the dictionary publicly
-        available. The launcher icon is made by <a href="https://www.freepik.com/" target="_blank">Freepik</a>
+        English language words; this implementation uses a variation of the Official Tournament and Club Word List,
+        which was sourced from a project by the GitHub user <a href="https://gist.github.com/mrflip/1516fa9e28c421a2f71e" target="_blank">
+            mrflip
+        </a>.
+        The launcher icon is made by <a href="https://www.freepik.com/" target="_blank">Freepik</a>
         from <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>. Cheers!
     </string>
     <string name="about_bullet_1">Words with fewer than 3 letters do not earn any points.</string>
