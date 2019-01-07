@@ -31,7 +31,8 @@
         The Boggle implementation would not have been possible without an existing "dictionary" of
         English language words; this implementation uses <a href="https://github.com/dwyl/english-words" target="_blank">this repo
         </a> and credit goes to <a href="https://dwyl.com/">DWYL</a> for making the dictionary publicly
-        available. Cheers!
+        available. The launcher icon is made by <a href="https://www.freepik.com/" target="_blank">Freepik</a>
+        from <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>. Cheers!
     </string>
     <string name="about_bullet_1">Words with fewer than 3 letters do not earn any points.</string>
     <string name="about_bullet_2">3 or 4 letters: 1 point</string>
