@@ -43,7 +43,6 @@ public class Scoreboard extends AppCompatActivity {
         switch (gameName) {
             case SNEK: scoreTable = (TableLayout) findViewById(R.id.snake_score_table);     break;
             case BOGGLE: scoreTable = (TableLayout) findViewById(R.id.boggle_score_table);  break;
-            case TICTACTOE: scoreTable = (TableLayout) findViewById(R.id.ttt_score_table);  break;
             case MINESWEEPER: scoreTable = (TableLayout) findViewById(R.id.ms_score_table); break;
         }
         ArrayList<Score> scores = currentScores.getGameType(gameName);
