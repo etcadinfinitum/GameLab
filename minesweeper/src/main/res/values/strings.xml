@@ -21,14 +21,14 @@
     </string>
     <string name="about_text_2">\n\n
         <b>About the Author</b>\n\nThis project was intended as a proof-of-concept in Android development for
-        a lowly Computer Science undergrad. Find out more about their work on their <a href="https://etcadinfinitum.github.io/">
-            GitHub Pages
-        </a> site.
+        a Computer Science undergrad. Find out more about their work on their <a href="https://lizzy.wiki/" target="_blank">
+            website
+        </a>.
         \n\n<b>Credits and Acknowledgements:</b>
         \n\nSeveral individuals were instrumental in the development and testing process of this application.
-        <a href="https://github.com/booellean" target="_blank">@MissElle</a> was kind enough to offer UI feedback.
-        <a href="https://github.com/mchorton" target="_blank">@mchorton</a> was kind enough to ooh and ahh when
-        requested. The Boggle implementation would not have been possible without an existing "dictionary" of
+        <a href="https://github.com/Yas-Elak" target="_blank">@Yas-Elak</a> provided unsolicited help (the best kind of help).
+        <a href="https://github.com/booellean" target="_blank">@MissElle</a> offered valuable UI feedback and general encouragement.
+        The Boggle implementation would not have been possible without an existing "dictionary" of
         English language words; this implementation uses <a href="https://github.com/dwyl/english-words" target="_blank">this repo
         </a> and credit goes to <a href="https://dwyl.com/">DWYL</a> for making the dictionary publicly
         available. Cheers!
