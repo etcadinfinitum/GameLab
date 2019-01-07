@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Minesweeper_menu game menu view.
  */
 public class Minesweeper_menu extends AppCompatActivity {
-    protected String level = "";
+    protected String level = "Hard";
     private float dpScale;
 
     @Override
