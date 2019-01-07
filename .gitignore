@@ -2,6 +2,8 @@
 /*/build/
 minesweeper/build/*
 build/
+minesweeper/release/*.json
+minesweeper/release/*.apk
 
 # Crashlytics configuations
 com_crashlytics_export_strings.xml
